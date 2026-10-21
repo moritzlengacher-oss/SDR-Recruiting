@@ -32,7 +32,7 @@ if(f){if(f.size>2*1024*1024||!f.name.toLowerCase().endsWith('.pdf')||(f.type&&f.
 const signature=new TextDecoder().decode(await f.slice(0,5).arrayBuffer());if(signature!=='%PDF-'){say('error','Der CV hat keine gültige PDF-Signatur.');return;}
 resumePdf={name:f.name,type:'application/pdf',size:f.size,data:await toBase64(f)};}
 const entries=[...new FormData(form).entries()].filter(([,v])=>typeof v==='string');
-const data=Object.fromEntries(entries);data.linkedin=lnk;data.privacy_consent=data.privacy_consent==='yes';data.submission_id=uid();data.source_url=location.href;data.source_offer=String(data.source_offer||'career-initiative');data.resumePdf=resumePdf;
+const data=Object.fromEntries(entries);data.linkedin=lnk;data.privacy_consent=data.privacy_consent==='yes';const submissionInput=form.elements.namedItem('submission_id');data.submission_id=submissionInput?.value||uid();if(submissionInput)submissionInput.value=data.submission_id;data.source_url=location.href;data.source_offer=String(data.source_offer||'career-initiative');data.resumePdf=resumePdf;
 const label=button.textContent;button.disabled=true;button.textContent='Wird sicher gesendet …';say('loading','Deine Bewerbung wird übermittelt …');
 try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),25000);let res;try{res=await fetch('/api/career-application',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ctrl.signal});}finally{clearTimeout(timeout);}
 const body=await res.json().catch(()=>({}));if(!res.ok||body.ok!==true)throw Error(body.message||'Die Bewerbung konnte nicht bestätigt werden.');
