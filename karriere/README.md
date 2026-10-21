@@ -1,12 +1,13 @@
-# Lengacher & Partner – Career Portal
+# L&P Karriereportal – dedizierte App
 
-**Isolated from main L&P website.**
+**Hauptseite**: GitHub `moritzlengacher-oss/lengacher-partner-website`, Vercel `ic`, Domain `www.lengacher-partner.ch`.
 
-- GitHub source: `moritzlengacher-oss/SDR-Recruiting`, career pages under `/karriere`. Existing SDR landing at `/index.html` remains unchanged.
-- Careers Vercel target: `sdr-recruiting`, distinct from main website Vercel project `ic`.
-- Public intended domain: `jobs.lengacher-partner.ch` (domain assignment only after successful QA).
-- 21 role pages with canonical URLs and JobPosting schema, brand-specific design and localized forms.
-- Application API: same-origin `/api/career-application` validates payload, forwards only to existing L&P ATS endpoint. **Never counts a submission as delivered unless upstream confirms `{ok:true}`.**
-- Backend is deliberately shared with the original L&P ATS to preserve database and notification routing; GitHub/Vercel website projects are separated.
-- Audit and release gates: preview page/filter/form checks, bad origin rejection, PDF rejection, consent required, downstream confirmation, SEO/redirect checks, mobile QA, SDR root unchanged, and rollback procedure.
-- No existing applicant data was migrated or modified.
+**Karriereplattform**: GitHub `moritzlengacher-oss/SDR-Recruiting`, Root Directory `karriere`, eigenes Vercel-Projekt `lp-karriere`, Domain `jobs.lengacher-partner.ch`.
+
+Die bestehende SDR-Landingpage im Root von `SDR-Recruiting` bleibt unangetastet. Der neue Karriereprojekt-Root enthält 21 Stellen (je eigenständige HTML-Seite), CSS/JS, `api/career-application.js`, `vercel.json` sowie diese Doku.
+
+Alle Bewerbungsdaten werden vom eigenen Backend nur bei erfolgreicher serverseitiger Validierung an den bestehenden L&P-ATS-Endpunkt auf `www.lengacher-partner.ch` weitergeleitet. Die Nutzung des bestehenden L&P-Datenspeichers ist bewusst zentralisiert; es gibt keine separate Schatten-Datenbank. Der Relay-Endpunkt darf niemals Erfolg melden, wenn die ursprüngliche L&P-API nicht `ok: true` bestätigt.
+
+**QA**: 21 Seiten, Filter und Suche, Formularfelder, PDF 2 MB, Checkbox ohne Vorauswahl, 400 bei fehlenden Angaben, 403 bei fremdem Origin, Upstream-Fehlerbehandlung, echte kontrollierte Testbewerbung, E-Mail-/CRM-Quittung, SEO, Mobilansicht, HSTS und Rollback.
+
+**Release Guard**: Vor der produktiven Umstellung müssen Domain-Zuordnung, 21 Detailseiten, Formular-End-to-End und Verfügbarkeit nachweislich grün sein.

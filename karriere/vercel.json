@@ -5,19 +5,32 @@
   "redirects": [
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "jobs.lengacher-partner.ch"
-        }
-      ],
       "destination": "/karriere",
       "permanent": false
     }
   ],
+  "rewrites": [
+    {
+      "source": "/karriere/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/karriere/:slug",
+      "destination": "/:slug/index.html"
+    },
+    {
+      "source": "/karriere",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/career-application.js": {
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
-      "source": "/karriere/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "X-Content-Type-Options",
@@ -50,10 +63,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "api/career-application.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
