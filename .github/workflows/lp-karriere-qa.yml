@@ -1,0 +1,37 @@
+name: L&P Karriere – QA & Release Guard
+on:
+  push:
+    branches:
+      - main
+      - feat/lp-karriere-separate-20261021
+    paths:
+      - 'karriere/**'
+      - '.github/workflows/lp-karriere-qa.yml'
+  pull_request:
+    paths:
+      - 'karriere/**'
+      - '.github/workflows/lp-karriere-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lp-career-qa-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  release-guard:
+    name: 21 Jobs · UI · API · Security
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: JavaScript syntax
+        run: |
+          node --check karriere/api/career-application.js
+          node --check karriere/karriere/assets/app.js
+      - name: Audit and API regression suite
+        run: node --test karriere/qa.test.mjs
