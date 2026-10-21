@@ -2,7 +2,7 @@
 const UPSTREAM='https://www.lengacher-partner.ch/api/career-application';
 const MAX_BYTES=4*1024*1024;
 const say=(res,status,data)=>{res.statusCode=status;res.setHeader('Content-Type','application/json; charset=utf-8');res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.end(JSON.stringify(data));};
-const validHost=h=>h==='jobs.lengacher-partner.ch'||/^sdr-recruiting-[a-z0-9-]+\.vercel\.app$/.test(h)||h==='lp-karriere.vercel.app'||h==='lp-karriere-lengacher-partner.vercel.app'||h==='localhost:3000'||h==='127.0.0.1:3000';
+const validHost=h=>h==='jobs.lengacher-partner.ch'||/^(?:lp-karriere|sdr-recruiting)-[a-z0-9-]+\.vercel\.app$/.test(h)||h==='lp-karriere.vercel.app'||h==='lp-karriere-lengacher-partner.vercel.app'||h==='localhost:3000'||h==='127.0.0.1:3000';
 module.exports=async function handler(req,res){
 if(req.method!=='POST')return say(res,405,{ok:false,message:'Methode nicht erlaubt.'});
 const host=String(req.headers.host||'').toLowerCase().split(':')[0];
