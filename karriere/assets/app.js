@@ -1,0 +1,37 @@
+(()=>{
+'use strict';
+const nav=document.querySelector('.nav nav');
+const toggle=document.querySelector('.mobile-toggle');
+toggle?.addEventListener('click',()=>{const o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(o));});
+const cards=[...document.querySelectorAll('.job-card')];
+const filters=[...document.querySelectorAll('.filter')];
+const search=document.getElementById('job-search');
+let category='Alle';
+function norm(s){return String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de-CH');}
+function renderFilter(){let c=0;const q=norm(search?.value).trim().split(/\s+/).filter(Boolean);for(const card of cards){const ok=(category==='Alle'||card.dataset.category===category)&&q.every(x=>norm(card.dataset.search).includes(x));card.hidden=!ok;if(ok)c++;}const count=document.getElementById('job-count');if(count)count.textContent=c+' Stellen verfügbar';const empty=document.getElementById('no-results');if(empty)empty.hidden=c!==0;}
+filters.forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;filters.forEach(x=>{const a=x===b;x.classList.toggle('active',a);x.setAttribute('aria-pressed',String(a));});renderFilter();}));
+search?.addEventListener('input',renderFilter);
+const form=document.getElementById('application');if(!form)return;
+const status=form.querySelector('.form-status');const button=form.querySelector('.submit');const link=form.elements.namedItem('linkedin');const file=form.elements.namedItem('resumePdfFile');
+const say=(state,message)=>{status.hidden=false;status.dataset.state=state;status.textContent=message;};
+const normalizeLinkedIn=(raw)=>{if(!raw?.trim())return '';try{const u=new URL(raw.trim());const host=u.hostname.toLowerCase();if(u.protocol!=='https:'||!(host==='linkedin.com'||host.endsWith('.linkedin.com'))||!/^\/(in|pub)\//.test(u.pathname))return '';u.hash='';return u.toString();}catch{return '';}};
+const toBase64=f=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=()=>reject(new Error('PDF kann nicht gelesen werden.'));r.readAsDataURL(f);});
+function uid(){return globalThis.crypto?.randomUUID?.()||('career-'+Date.now()+'-'+Math.random().toString(36).slice(2));}
+form.addEventListener('submit',async(e)=>{e.preventDefault();if(!form.reportValidity())return;
+const lnk=normalizeLinkedIn(link.value);const f=file.files?.[0]||null;
+if(link.value&& !lnk){say('error','Bitte gib eine gültige LinkedIn-Profiladresse mit https://linkedin.com/in/... an.');link.focus();return;}
+if(!lnk&&!f){say('error','Bitte gib ein LinkedIn-Profil an oder lade einen PDF-CV hoch.');return;}
+let resumePdf=null;
+if(f){if(f.size>2*1024*1024||!f.name.toLowerCase().endsWith('.pdf')||(f.type&&f.type!=='application/pdf')){say('error','Der CV muss eine PDF-Datei mit maximal 2 MB sein.');return;}
+const signature=new TextDecoder().decode(await f.slice(0,5).arrayBuffer());if(signature!=='%PDF-'){say('error','Der CV hat keine gültige PDF-Signatur.');return;}
+resumePdf={name:f.name,type:'application/pdf',size:f.size,data:await toBase64(f)};}
+const entries=[...new FormData(form).entries()].filter(([,v])=>typeof v==='string');
+const data=Object.fromEntries(entries);data.linkedin=lnk;data.privacy_consent=data.privacy_consent==='yes';data.submission_id=uid();data.source_url=location.href;data.source_offer=String(data.source_offer||'career-initiative');data.resumePdf=resumePdf;
+const label=button.textContent;button.disabled=true;button.textContent='Wird sicher gesendet …';say('loading','Deine Bewerbung wird übermittelt …');
+try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),25000);let res;try{res=await fetch('/api/career-application',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ctrl.signal});}finally{clearTimeout(timeout);}
+const body=await res.json().catch(()=>({}));if(!res.ok||body.ok!==true)throw Error(body.message||'Die Bewerbung konnte nicht bestätigt werden.');
+say('success','Vielen Dank! Deine Bewerbung wurde übermittelt.'+(body.reference?' Referenz: '+body.reference:'')+' Wir melden uns persönlich.');form.reset();
+}catch(err){say('error',err?.message==='This operation was aborted'?'Zeitüberschreitung. Bitte nochmals versuchen.':(err?.message||'Übermittlung fehlgeschlagen. Bitte versuche es erneut.'));}
+finally{button.disabled=false;button.textContent=label;}
+});
+})();
