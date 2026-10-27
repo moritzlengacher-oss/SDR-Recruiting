@@ -1,0 +1,66 @@
+{
+  "source": "https://www.lengacher-partner.ch/",
+  "captured": "2026-10-27",
+  "fonts": [
+    "Cormorant Garamond",
+    "DM Mono"
+  ],
+  "assets": {
+    "assets/lp-brand/styles.css": {
+      "bytes": 512216,
+      "sha256": "cc1695e26d8bf1d6e330ff196be263a8616a45470c804ad71d2558d4cb5de71e"
+    },
+    "favicon-32x32.png": {
+      "bytes": 1298,
+      "sha256": "c490eec8d9e2ea55c8f2bbb13fad236fbf6e13ef94365484a83206a9bec8c97d"
+    },
+    "assets/fonts/cormorant-garamond-latin-400-normal.woff2": {
+      "bytes": 22876,
+      "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+    },
+    "assets/fonts/dm-mono-latin-300-normal.woff2": {
+      "bytes": 14784,
+      "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7"
+    },
+    "favicon.ico": {
+      "bytes": 609,
+      "sha256": "3084bf00c0d7f7f041845efb52a9be788740e0f41c0a0f1764e0192a5d42bfea"
+    },
+    "assets/fonts/cormorant-garamond-latin-300-italic.woff2": {
+      "bytes": 22484,
+      "sha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a"
+    },
+    "assets/lengacher-partner-logo.webp": {
+      "bytes": 16090,
+      "sha256": "191dfdb82d0bf035de020f1e50b878a8c96c3634a57b304ffbe65a162efe92ed"
+    },
+    "favicon-48x48.png": {
+      "bytes": 2101,
+      "sha256": "cc92eda9e9a9f55d3d43b856633a29e32ec339fd0ac8e8576923b1e12b349ceb"
+    },
+    "safari-pinned-tab.svg": {
+      "bytes": 354,
+      "sha256": "9177f7f846a5afc7ec37af4554495be0773507ef87098634a925d2220f457458"
+    },
+    "apple-touch-icon.png": {
+      "bytes": 8843,
+      "sha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a"
+    },
+    "assets/fonts/cormorant-garamond-latin-600-normal.woff2": {
+      "bytes": 23396,
+      "sha256": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea"
+    },
+    "assets/fonts/cormorant-garamond-latin-300-normal.woff2": {
+      "bytes": 21908,
+      "sha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7"
+    },
+    "assets/fonts/dm-mono-latin-400-normal.woff2": {
+      "bytes": 14820,
+      "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e"
+    },
+    "assets/lp-brand/search-index.json": {
+      "bytes": 27661,
+      "sha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6"
+    }
+  }
+}
