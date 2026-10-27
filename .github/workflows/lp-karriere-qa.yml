@@ -34,10 +34,11 @@ jobs:
       - name: JavaScript syntax
         run: |
           node --check karriere/api/career-application.js
+          node --check karriere/api/career-search.js
           node --check karriere/karriere/assets/app.js
           node --check karriere/karriere/assets/brand-shell.js
       - name: Build with verified original branding
         run: node karriere/build.mjs
       - name: Audit, brand parity and API regression suite
-        run: node --test --test-isolation=none karriere/qa.test.mjs karriere/brand-guard.test.mjs karriere/metadata-regression.test.mjs karriere/application-validation.test.mjs tests/lp-karriere-release-guard.test.mjs
+        run: node --test --test-isolation=none karriere/qa.test.mjs karriere/brand-guard.test.mjs karriere/metadata-regression.test.mjs karriere/application-validation.test.mjs karriere/search-integration.test.mjs tests/lp-karriere-release-guard.test.mjs
 

@@ -219,14 +219,42 @@ const empty=document.getElementById('search-empty');
 const hint=document.getElementById('search-hint');
 if(!overlay||!input||!results||!empty||!hint)return;
 const triggers=[...document.querySelectorAll('.nav-search-btn')];
-let searchIndex=null,active=-1,lastTrigger=null;
+let searchIndex=null,indexPromise=null,liveIndexPromise=null,active=-1,lastTrigger=null;
 const normalize=s=>String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de-CH');
-const validHref=raw=>{try{const u=new URL(raw,location.origin);return (u.protocol==='https:'&&(u.origin===location.origin||u.origin==='https://www.lengacher-partner.ch'))||(u.origin===location.origin&&location.hostname==='localhost');}catch{return false;}};
+const validHref=raw=>{try{if(typeof raw!=='string')return false;const u=new URL(raw,location.origin);if(u.username||u.password)return false;return (u.protocol==='https:'&&(u.origin===location.origin||u.origin==='https://www.lengacher-partner.ch'))||(u.origin===location.origin&&(location.hostname==='localhost'||location.hostname==='127.0.0.1'));}catch{return false;}};
+function mergeSearchIndexes(...indexes){
+ const unique=new Map();
+ for(const index of indexes)for(const item of index){
+  if(!item||typeof item.title!=='string'||!item.title.trim()||!validHref(item.url))continue;
+  const url=new URL(item.url,location.origin);url.hash='';url.pathname=url.pathname.replace(/\/$/,'')||'/';
+  unique.set(url.href,{type:typeof item.type==='string'?item.type:'Seite',title:item.title,desc:typeof item.desc==='string'?item.desc:'',keywords:typeof item.keywords==='string'?item.keywords:'',url:url.href});
+ }
+ return [...unique.values()];
+}
+async function fetchSearchIndex(url){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),5000);
+ try{const response=await fetch(url,{headers:{Accept:'application/json'},signal:controller.signal});if(!response.ok)throw Error('search');const data=await response.json();if(!Array.isArray(data))throw Error('search');return data;}
+ finally{clearTimeout(timer);}
+}
+function loadLiveIndex(){
+ if(liveIndexPromise)return liveIndexPromise;
+ liveIndexPromise=(async()=>{
+  try{const items=await fetchSearchIndex('/api/career-search');searchIndex=mergeSearchIndexes(searchIndex||[],items);if(!overlay.hidden&&input.value.trim())void renderSearch();}
+  catch{/* The published local index and career search remain available. */}
+ })();
+ return liveIndexPromise;
+}
 async function loadIndex(){
  if(searchIndex)return searchIndex;
- try{const indexes=await Promise.all(['/assets/lp-brand/search-index.json','/karriere/assets/jobs-search.json'].map(async url=>{const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw Error('search');const data=await response.json();if(!Array.isArray(data))throw Error('search');return data;}));searchIndex=indexes.flat().filter(x=>x&&typeof x.title==='string'&&validHref(x.url));}
- catch{searchIndex=[...document.querySelectorAll('.site-nav a[href],.site-footer a[href],.job-card h3 a[href]')].map(a=>({type:'Seite',title:a.textContent.trim(),desc:'',url:a.href})).filter(x=>x.title&&validHref(x.url));}
- return searchIndex;
+ if(!indexPromise)indexPromise=(async()=>{
+  const outcomes=await Promise.allSettled(['/assets/lp-brand/search-index.json','/karriere/assets/jobs-search.json'].map(fetchSearchIndex));
+  const indexes=outcomes.filter(item=>item.status==='fulfilled').map(item=>item.value);
+  if(outcomes.some(item=>item.status==='rejected'))indexes.push([...document.querySelectorAll('.site-nav a[href],.site-footer a[href],.job-card h3 a[href]')].map(a=>({type:'Seite',title:a.textContent.trim(),desc:'',url:a.href})));
+  searchIndex=mergeSearchIndexes(...indexes);
+  void loadLiveIndex();
+  return searchIndex;
+ })();
+ return indexPromise;
 }
 function focusResult(index){const rows=[...results.querySelectorAll('a.search-result')];if(!rows.length)return;active=(index+rows.length)%rows.length;rows.forEach((row,i)=>{row.classList.toggle('active',i===active);row.classList.toggle('selected',i===active);});rows[active].focus();}
 async function renderSearch(){

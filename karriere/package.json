@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node build.mjs && node --test --test-isolation=none qa.test.mjs brand-guard.test.mjs metadata-regression.test.mjs application-validation.test.mjs ../tests/lp-karriere-release-guard.test.mjs"
+    "test": "node build.mjs && node --test --test-isolation=none qa.test.mjs brand-guard.test.mjs metadata-regression.test.mjs application-validation.test.mjs search-integration.test.mjs ../tests/lp-karriere-release-guard.test.mjs"
   }
 }
 
