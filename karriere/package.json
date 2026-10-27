@@ -1,0 +1,9 @@
+{
+  "name": "lp-karriere",
+  "private": true,
+  "version": "1.1.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node --test qa.test.mjs brand-guard.test.mjs"
+  }
+}
