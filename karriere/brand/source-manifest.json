@@ -61,6 +61,46 @@
     "assets/lp-brand/search-index.json": {
       "bytes": 27661,
       "sha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6"
+    },
+    "site.webmanifest": {
+      "bytes": 676,
+      "sha256": "60ba122e9ab2bacbef16fdfdc2047243fab0252528db58358d101ddaa852b804"
+    },
+    "android-chrome-192x192.png": {
+      "bytes": 9299,
+      "sha256": "2a9d3da55f518b444a69b6fa2c6a879c5a598302a4ce8e3b322801ae6c80f438"
+    },
+    "android-chrome-512x512.png": {
+      "bytes": 25928,
+      "sha256": "762fe7f067cc8f75eb48062c6211a57e5f073e55209e37b762451f35b83a949b"
+    },
+    "browserconfig.xml": {
+      "bytes": 222,
+      "sha256": "a09eb5fa0284ef3feb334f0d50d02c66bcad4a2f43fb35a888898a234de1d6a4"
+    },
+    "mstile-150x150.png": {
+      "bytes": 7398,
+      "sha256": "65d284ea535b6d3ae0879dfbf943ca1a4737dc4fe72438f53dd1bb2c64704f2c"
+    },
+    "assets/og/og-home-v2.jpg": {
+      "bytes": 355534,
+      "sha256": "aa3e3778e63124d4d2c3ec87ea564317893b87685ca9f343d6dcbe6a36ee6aff"
     }
+  },
+  "supplement": {
+    "captured_utc": "2026-10-27T18:42:01+00:00",
+    "reference": "User confirmed the normal main website as the correct original brand reference on 2026-10-27.",
+    "purpose": "Restore omitted original manifest, icon surfaces and social preview without recreating image assets.",
+    "original_asset_sources": {
+      "site.webmanifest": "https://www.lengacher-partner.ch/site.webmanifest",
+      "android-chrome-192x192.png": "https://www.lengacher-partner.ch/android-chrome-192x192.png",
+      "android-chrome-512x512.png": "https://www.lengacher-partner.ch/android-chrome-512x512.png",
+      "browserconfig.xml": "https://www.lengacher-partner.ch/browserconfig.xml",
+      "mstile-150x150.png": "https://www.lengacher-partner.ch/mstile-150x150.png",
+      "assets/og/og-home-v2.jpg": "https://www.lengacher-partner.ch/assets/og/og-home-v2.jpg"
+    },
+    "primary_favicon_source": "https://www.lengacher-partner.ch/apple-touch-icon.png",
+    "primary_favicon_sha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a",
+    "original_asset_bytes_preserved": true
   }
 }
