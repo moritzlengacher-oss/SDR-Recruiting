@@ -1,0 +1,842 @@
+{
+  "release": {
+    "commit": "9b1e2da60ebdafdca9ddcf3a57f6ab90b1f1f858",
+    "deployment": "dpl_D1AoMZUVmuGJLXy1Lhe6qLaXN1J3",
+    "url": "https://jobs.lengacher-partner.ch/karriere"
+  },
+  "evidence": {
+    "baseline-render.json": [
+      {
+        "label": "original-desktop",
+        "status": 200,
+        "title": "KI, Prozesse & Wachstum für Schweizer KMU | L&P",
+        "bodyFont": "\"Cormorant Garamond\", Georgia, serif",
+        "h1Font": "\"Cormorant Garamond\", Georgia, serif",
+        "navFont": "\"DM Mono\", monospace",
+        "bg": "rgb(245, 242, 236)",
+        "ink": "rgb(13, 13, 13)",
+        "logo": {
+          "src": "/assets/lengacher-partner-logo.webp",
+          "loaded": true
+        },
+        "overflow": false,
+        "scrollWidth": 1440,
+        "width": 1440,
+        "navHeight": 109,
+        "headerLinks": 54,
+        "footerLinks": 48,
+        "jobs": 0,
+        "fonts": [
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          }
+        ],
+        "errors": [],
+        "bad": []
+      },
+      {
+        "label": "before-desktop",
+        "status": 200,
+        "title": "Karriere & Stellenangebote | Lengacher & Partner GmbH",
+        "bodyFont": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "h1Font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "navFont": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "bg": "rgb(245, 242, 236)",
+        "ink": "rgb(24, 41, 35)",
+        "logo": null,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "width": 1440,
+        "navHeight": 79,
+        "headerLinks": 5,
+        "footerLinks": 4,
+        "jobs": 21,
+        "fonts": [],
+        "errors": [],
+        "bad": []
+      },
+      {
+        "label": "after-desktop",
+        "status": 200,
+        "title": "Karriere & Stellenangebote | Lengacher & Partner GmbH",
+        "bodyFont": "\"Cormorant Garamond\", Georgia, serif",
+        "h1Font": "\"Cormorant Garamond\", Georgia, serif",
+        "navFont": "\"DM Mono\", monospace",
+        "bg": "rgb(245, 242, 236)",
+        "ink": "rgb(13, 13, 13)",
+        "logo": {
+          "src": "/assets/lengacher-partner-logo.webp",
+          "loaded": true
+        },
+        "overflow": false,
+        "scrollWidth": 1440,
+        "width": 1440,
+        "navHeight": 109,
+        "headerLinks": 54,
+        "footerLinks": 48,
+        "jobs": 21,
+        "fonts": [
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "unloaded"
+          }
+        ],
+        "errors": [],
+        "bad": []
+      },
+      {
+        "label": "after-mobile",
+        "status": 200,
+        "title": "Karriere & Stellenangebote | Lengacher & Partner GmbH",
+        "bodyFont": "\"Cormorant Garamond\", Georgia, serif",
+        "h1Font": "\"Cormorant Garamond\", Georgia, serif",
+        "navFont": "\"DM Mono\", monospace",
+        "bg": "rgb(245, 242, 236)",
+        "ink": "rgb(13, 13, 13)",
+        "logo": {
+          "src": "/assets/lengacher-partner-logo.webp",
+          "loaded": true
+        },
+        "overflow": false,
+        "scrollWidth": 390,
+        "width": 390,
+        "navHeight": 81,
+        "headerLinks": 54,
+        "footerLinks": 48,
+        "jobs": 21,
+        "fonts": [
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "DM Mono",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "loaded"
+          },
+          {
+            "family": "Cormorant Garamond",
+            "status": "unloaded"
+          }
+        ],
+        "errors": [],
+        "bad": []
+      }
+    ],
+    "local-final-functional.json": {
+      "tag": "local-final",
+      "base": "http://localhost:3001",
+      "date": "2026-10-27T18:11:39.553Z",
+      "passed": 20,
+      "total": 20,
+      "checks": [
+        {
+          "name": "Original fonts/logo/header/footer, desktop no overflow",
+          "pass": true
+        },
+        {
+          "name": "Desktop megamenu",
+          "pass": true
+        },
+        {
+          "name": "Category, keyword, no-results, reset",
+          "pass": true
+        },
+        {
+          "name": "Location and experience filters combine",
+          "pass": true
+        },
+        {
+          "name": "Quick Apply maps role and offer",
+          "pass": true
+        },
+        {
+          "name": "Consent initially unselected and blocks submit",
+          "pass": true
+        },
+        {
+          "name": "LinkedIn or PDF required",
+          "pass": true
+        },
+        {
+          "name": "Invalid LinkedIn rejected",
+          "pass": true
+        },
+        {
+          "name": "Upstream failure preserves inputs and enables retry",
+          "pass": true
+        },
+        {
+          "name": "HTTP200 with ok:false remains error and same retry ID",
+          "pass": true
+        },
+        {
+          "name": "Confirmed mocked success resets form and consent",
+          "pass": true
+        },
+        {
+          "name": "Invalid PDF signature rejected",
+          "pass": true
+        },
+        {
+          "name": "PDF above2MB rejected",
+          "pass": true
+        },
+        {
+          "name": "PDF alternative works with mocked API",
+          "pass": true
+        },
+        {
+          "name": "FAQ disclosure and verified career booking link",
+          "pass": true
+        },
+        {
+          "name": "Website search results and ArrowUp/Escape keyboard handling",
+          "pass": true
+        },
+        {
+          "name": "Mobile navigation and dropdown/Escape focus return",
+          "pass": true
+        },
+        {
+          "name": "No horizontal overflow at390and320px",
+          "pass": true
+        },
+        {
+          "name": "Job detail preserves role, fonts, shell and apply anchor",
+          "pass": true
+        },
+        {
+          "name": "No JavaScript exceptions or broken assets",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "bad": [],
+      "mockedSubmissions": 4
+    },
+    "final-visual.json": [
+      {
+        "label": "final-desktop",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 1180,
+        "viewport": 1440
+      },
+      {
+        "label": "final-apply",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 1180,
+        "viewport": 1440
+      },
+      {
+        "label": "final-footer",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 1180,
+        "viewport": 1440
+      },
+      {
+        "label": "final-mobile",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 350,
+        "viewport": 390
+      },
+      {
+        "label": "final-mobile-apply",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 350,
+        "viewport": 390
+      },
+      {
+        "label": "final-mobile-footer",
+        "overflow": false,
+        "buttonColor": "rgb(245, 242, 236)",
+        "buttonBg": "rgb(13, 13, 13)",
+        "heroDisplay": "block",
+        "applyDisplay": "block",
+        "heroWidth": 350,
+        "viewport": 390
+      }
+    ],
+    "live-http.json": {
+      "date": "2026-10-27T18:16:20.494Z",
+      "pages": [
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/backend-software-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/account-executive-b2b-luzern",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/bim-cad-automation-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/ads-specialist-performance-marketing-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/business-development-representative-luzern",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/content-creator-luzern-remote",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/cyber-security-cloud-security-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/data-ai-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/direktionsassistenz-executive-assistant-luzern",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/frontend-software-engineer-react-nextjs-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/erp-abacus-integration-specialist-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/devops-cloud-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/qa-automation-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/power-platform-crm-developer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/mobile-app-developer-flutter-react-native-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/senior-full-stack-software-engineer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/social-media-manager-luzern-remote",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/sales-development-representative-luzern",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/solution-architect-technical-lead-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/ui-ux-product-designer-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "url": "https://jobs.lengacher-partner.ch/karriere/technical-product-owner-business-analyst-schweiz",
+          "status": 200,
+          "brand": true,
+          "logo": true,
+          "header": true,
+          "footer": true,
+          "booking": true,
+          "sameAsBuilt": true,
+          "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://www.lengacher-partner.ch data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        }
+      ],
+      "assets": [
+        {
+          "path": "assets/fonts/dm-mono-latin-300-normal.woff2",
+          "status": 200,
+          "bytes": 14784,
+          "hashMatch": true
+        },
+        {
+          "path": "favicon-32x32.png",
+          "status": 200,
+          "bytes": 1298,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/lp-brand/styles.css",
+          "status": 200,
+          "bytes": 512216,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-400-normal.woff2",
+          "status": 200,
+          "bytes": 22876,
+          "hashMatch": true
+        },
+        {
+          "path": "favicon-48x48.png",
+          "status": 200,
+          "bytes": 2101,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/lengacher-partner-logo.webp",
+          "status": 200,
+          "bytes": 16090,
+          "hashMatch": true
+        },
+        {
+          "path": "favicon.ico",
+          "status": 200,
+          "bytes": 609,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-300-italic.woff2",
+          "status": 200,
+          "bytes": 22484,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-300-normal.woff2",
+          "status": 200,
+          "bytes": 21908,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-600-normal.woff2",
+          "status": 200,
+          "bytes": 23396,
+          "hashMatch": true
+        },
+        {
+          "path": "safari-pinned-tab.svg",
+          "status": 200,
+          "bytes": 354,
+          "hashMatch": true
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "status": 200,
+          "bytes": 8843,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/fonts/dm-mono-latin-400-normal.woff2",
+          "status": 200,
+          "bytes": 14820,
+          "hashMatch": true
+        },
+        {
+          "path": "assets/lp-brand/search-index.json",
+          "status": 200,
+          "bytes": 27661,
+          "hashMatch": true
+        }
+      ],
+      "api": [
+        {
+          "name": "GET",
+          "status": 405,
+          "cache": "no-store",
+          "body": "{\"ok\":false,\"message\":\"Methode nicht erlaubt.\"}"
+        },
+        {
+          "name": "invalid-input",
+          "status": 400,
+          "cache": "no-store",
+          "body": "{\"ok\":false,\"message\":\"Bitte Pflichtangaben und Einwilligung prüfen.\"}"
+        },
+        {
+          "name": "foreign-origin",
+          "status": 403,
+          "cache": "no-store",
+          "body": "{\"ok\":false,\"message\":\"Ursprung nicht erlaubt.\"}"
+        }
+      ],
+      "search": {
+        "status": 200,
+        "count": 22
+      },
+      "redirects": {
+        "mainCareer": {
+          "status": 200,
+          "url": "https://jobs.lengacher-partner.ch/karriere"
+        },
+        "jobsRoot": {
+          "status": 200,
+          "url": "https://jobs.lengacher-partner.ch/karriere"
+        }
+      }
+    },
+    "live-own-assets.json": [
+      {
+        "path": "karriere/assets/styles.css",
+        "status": 200,
+        "sameAsBuilt": true
+      },
+      {
+        "path": "karriere/assets/app.js",
+        "status": 200,
+        "sameAsBuilt": true
+      },
+      {
+        "path": "karriere/assets/brand-shell.js",
+        "status": 200,
+        "sameAsBuilt": true
+      },
+      {
+        "path": "karriere/assets/jobs-search.json",
+        "status": 200,
+        "sameAsBuilt": true
+      },
+      {
+        "path": "sitemap.xml",
+        "status": 200,
+        "sameAsBuilt": true
+      },
+      {
+        "path": "robots.txt",
+        "status": 200,
+        "sameAsBuilt": true
+      }
+    ],
+    "live-functional.json": {
+      "tag": "live",
+      "base": "https://jobs.lengacher-partner.ch",
+      "date": "2026-10-27T18:17:20.195Z",
+      "passed": 18,
+      "total": 20,
+      "checks": [
+        {
+          "name": "Original fonts/logo/header/footer, desktop no overflow",
+          "pass": true
+        },
+        {
+          "name": "Desktop megamenu",
+          "pass": true
+        },
+        {
+          "name": "Category, keyword, no-results, reset",
+          "pass": true
+        },
+        {
+          "name": "Location and experience filters combine",
+          "pass": true
+        },
+        {
+          "name": "Quick Apply maps role and offer",
+          "pass": true
+        },
+        {
+          "name": "Consent initially unselected and blocks submit",
+          "pass": true
+        },
+        {
+          "name": "LinkedIn or PDF required",
+          "pass": true
+        },
+        {
+          "name": "Invalid LinkedIn rejected",
+          "pass": true
+        },
+        {
+          "name": "Upstream failure preserves inputs and enables retry",
+          "pass": true
+        },
+        {
+          "name": "HTTP200 with ok:false remains error and same retry ID",
+          "pass": true
+        },
+        {
+          "name": "Confirmed mocked success resets form and consent",
+          "pass": true
+        },
+        {
+          "name": "Invalid PDF signature rejected",
+          "pass": false,
+          "error": "The input did not match the regular expression /PDF-Signatur/. Input:\n\n'Vielen Dank! Deine Bewerbung wurde übermittelt. Referenz: QA-MOCK Wir melden uns persönlich.'\n"
+        },
+        {
+          "name": "PDF above2MB rejected",
+          "pass": true
+        },
+        {
+          "name": "PDF alternative works with mocked API",
+          "pass": true
+        },
+        {
+          "name": "FAQ disclosure and verified career booking link",
+          "pass": true
+        },
+        {
+          "name": "Website search results and ArrowUp/Escape keyboard handling",
+          "pass": true
+        },
+        {
+          "name": "Mobile navigation and dropdown/Escape focus return",
+          "pass": true
+        },
+        {
+          "name": "No horizontal overflow at390and320px",
+          "pass": true
+        },
+        {
+          "name": "Job detail preserves role, fonts, shell and apply anchor",
+          "pass": false,
+          "error": "locator.inputValue: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('[name=career_role]')\n"
+        },
+        {
+          "name": "No JavaScript exceptions or broken assets",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "bad": [],
+      "mockedSubmissions": 4
+    },
+    "live-targeted.json": {
+      "date": "2026-10-27T18:18:19.715Z",
+      "checks": [
+        {
+          "name": "Live SDR detail role and shared shell",
+          "pass": true
+        },
+        {
+          "name": "Live invalid PDF rejected after asynchronous signature validation",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "bad": [],
+      "interceptedRequests": 0
+    }
+  }
+}
