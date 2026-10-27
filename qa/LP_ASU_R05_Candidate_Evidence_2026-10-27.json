@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-10-27T18-58-03-254Z-136f4739-6786-4aba-a45c-95dc37bcf1dd",
+  "startedAt": "2026-10-27T18:58:03.254Z",
+  "result": "PASS",
+  "scope": "Candidate build, original brand, preserved functions and mocked integration contracts",
+  "target": {
+    "repository": "moritzlengacher-oss/SDR-Recruiting",
+    "projectId": "prj_aai674bWi0ZXbmKh2ocCCRuSSv5o",
+    "projectName": "lp-karriere",
+    "publicOrigin": "https://jobs.lengacher-partner.ch",
+    "rootDirectory": "karriere"
+  },
+  "stages": [
+    {
+      "name": "build",
+      "mode": "STATIC",
+      "result": "PASS",
+      "exitCode": 0,
+      "durationMs": 55,
+      "logSha256": "0121be2e90aaf50c888fee865568a9f3e4ab24a37db5db2d7b83c0e42b80718d"
+    },
+    {
+      "name": "static",
+      "mode": "STATIC",
+      "result": "PASS",
+      "exitCode": 0,
+      "durationMs": 134,
+      "logSha256": "4050080263e0c06018f9d8ac2a953092cb36f8e65b255153045b310f4e57b8c0",
+      "proofModes": [
+        "STATIC",
+        "MOCKED"
+      ],
+      "counts": {
+        "tests": 27,
+        "pass": 27,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "name": "browser",
+      "mode": "LOCAL",
+      "result": "PASS",
+      "exitCode": 0,
+      "durationMs": 40822,
+      "logSha256": "9971576ee1397835a8717ea10a29b73864a666a288404a135e4b42ce0a8e9a39",
+      "proofModes": [
+        "LOCAL",
+        "MOCKED"
+      ]
+    }
+  ],
+  "limits": [
+    "The local browser intercepts application requests; it does not prove live CRM, email or calendar delivery.",
+    "Candidate checks do not replace two prechecks, independent review, post-deployment verification or provider enforcement.",
+    "A repository script is mutable; GitHub rulesets and Vercel Deployment Checks must be enabled separately."
+  ],
+  "revision": {
+    "observedCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d",
+    "claimedCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d",
+    "trackedChanges": ""
+  },
+  "contractSha256": "421ffa8ef6b6d44bdd291ed20055e16615c391dfc72af39aa3a7a9aca401b684",
+  "source": {
+    "sha256": "977f1c5a15c1a88b177320a6230d9c2bfac5ebb4dbceb10ebaea3068a71e5c95",
+    "files": [
+      {
+        "path": ".github/pull_request_template.md",
+        "sha256": "a095bc002f4003ffd2de3cbea9f98187c104ababa7564d2f3c1d90a3f3a8e65a"
+      },
+      {
+        "path": ".github/workflows/lp-karriere-qa.yml",
+        "sha256": "3705d43616c9bbcc2b705ed882b782ed4046b30cb39840963bb911a8424025f1"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "90f3ff9c7734d7c63bacc5c790e91b46c78579ceec282f4247e6aef8875020db"
+      },
+      {
+        "path": "docs/quality/ASU-STANDARD.md",
+        "sha256": "f90f4744ac1d2520837ac86b829ec035eb8b5db7240b34ece888e294ba81276a"
+      },
+      {
+        "path": "docs/quality/github-main-ruleset.json",
+        "sha256": "d097fcaec292b4b236023303199242a560988a4e175949d96e93d34e693b83e8"
+      },
+      {
+        "path": "docs/quality/INCIDENT-2026-10-27.md",
+        "sha256": "fe440ad109673915928461fd321139b258873a727ed36361666f597fee88108d"
+      },
+      {
+        "path": "docs/quality/PROVIDER-CONTROLS.md",
+        "sha256": "1b11bd6d2b0cfdb3fac31cff0841765c4dcf34a4564b1e086d819b9ae046cdd1"
+      },
+      {
+        "path": "docs/quality/templates/acceptance-contract.example.json",
+        "sha256": "0c9a8b59c30232fc829c4d473952abf7687710705121b6029483241b85ef4d38"
+      },
+      {
+        "path": "docs/quality/templates/AGENTS.template.md",
+        "sha256": "284fd2e46cd98ebb2c2cb04cd1674bfc5d0c0ce3cbee105b4e0a92d980cce9f3"
+      },
+      {
+        "path": "index.html",
+        "sha256": "39b0e222666f77adfcfc93265c38b84c7d2be07faa7850f7907596ce93e9390e"
+      },
+      {
+        "path": "karriere/.gitignore",
+        "sha256": "98f3a8c2384e50eed0f5caf32e5e2b1313c6d46cbbf005aec7fd3eb4ba00850a"
+      },
+      {
+        "path": "karriere/api/career-application.js",
+        "sha256": "88ef4cc241b47295433f25fa267d0ada0d4cdd31a819c6059c27249d9e2aa97d"
+      },
+      {
+        "path": "karriere/ASU_RELEASE.md",
+        "sha256": "d2c7714b2c59e55e4b94ca1d9e49fc7ea898894f41668a18d5f4073fbd7b25c7"
+      },
+      {
+        "path": "karriere/brand-guard.test.mjs",
+        "sha256": "54461f4ae60f5141adf7d7103cd3900ac5d7ddbc1933ba25567fe1c2d19b4740"
+      },
+      {
+        "path": "karriere/brand/footer.html",
+        "sha256": "fb5eec3df562c1434be4d86223b57cb1140f1ee5b29ce6685b70231b2802c182"
+      },
+      {
+        "path": "karriere/brand/header.html",
+        "sha256": "2b1e0dcdc69b95478bae7a17390a24741c64bd02a0cfee3cc18cc575b20b20b5"
+      },
+      {
+        "path": "karriere/brand/original-assets.b64",
+        "sha256": "a9f9b1d71855c1e0725854aad2b6caf9c59dc744571aa805740d010c52ab41a5"
+      },
+      {
+        "path": "karriere/brand/search.html",
+        "sha256": "bfbfc1458b1ff13643a06ae029e348026079dea0a7eb0f5fb1336b8e97b1882a"
+      },
+      {
+        "path": "karriere/brand/source-manifest.json",
+        "sha256": "7d4df6c513e6f440275a11dcf089d34640e470dfcd9973861e799fc1603402d3"
+      },
+      {
+        "path": "karriere/browser-qa.mjs",
+        "sha256": "5a53fddbe8e457e736b5d0d93b52621a785c682b0179c966a28c1dbaea99b068"
+      },
+      {
+        "path": "karriere/build.mjs",
+        "sha256": "3112c1f3a0fe99d9f5f5a03c210773624a204401aad32f5cd17ac0dcac59811d"
+      },
+      {
+        "path": "karriere/karriere/account-executive-b2b-luzern/index.html",
+        "sha256": "172ffb42d5b9e3a0927bf03036764f2b7d0436d075e0ecba7a4e2c5052e91144"
+      },
+      {
+        "path": "karriere/karriere/ads-specialist-performance-marketing-schweiz/index.html",
+        "sha256": "22174aa3cab94340d8ffb71599fd4ae74b29f64272abe1f308ecd8fe95eb27fc"
+      },
+      {
+        "path": "karriere/karriere/assets/app.js",
+        "sha256": "4d4afe412b5c7913afd2a2fbb88cd11de588bb97f835d7c8f981ff22c7a6ade7"
+      },
+      {
+        "path": "karriere/karriere/assets/brand-shell.js",
+        "sha256": "526f8257401e7e433196509d6ad523ea78bc20623dca38d81710dbf847c154f8"
+      },
+      {
+        "path": "karriere/karriere/assets/styles.css",
+        "sha256": "3923b981ad2a6e78f25c0ba35da9562c693f08c58a14b9b0356eabc4fe3b5244"
+      },
+      {
+        "path": "karriere/karriere/backend-software-engineer-schweiz/index.html",
+        "sha256": "5f5d6c43789c320934fc8a7f5fbef3cf5da60f146e420502113e987b10f55a7c"
+      },
+      {
+        "path": "karriere/karriere/bim-cad-automation-engineer-schweiz/index.html",
+        "sha256": "bb5e289e0efeab3579b7aff2896cc4439bd35f906e2fbdc2273569ef523495ae"
+      },
+      {
+        "path": "karriere/karriere/business-development-representative-luzern/index.html",
+        "sha256": "4c52b4590fc3d89c750024b3364e7b4ebe52ce586c1644d6cd6691db449a491a"
+      },
+      {
+        "path": "karriere/karriere/content-creator-luzern-remote/index.html",
+        "sha256": "5e3124f1dc343c551ebadd9a0d7f1edfcf0348313dca99ad1aa409acf12656e4"
+      },
+      {
+        "path": "karriere/karriere/cyber-security-cloud-security-engineer-schweiz/index.html",
+        "sha256": "b3ca7d0dc8d85fdd9b3f0e6aa3303252525ddba9a0ac2a12e45f7814910d7116"
+      },
+      {
+        "path": "karriere/karriere/data-ai-engineer-schweiz/index.html",
+        "sha256": "074c4d6c4c3f3f861f77a748576b7bbedd5d82ac68a6fd1b78b7269452615cc4"
+      },
+      {
+        "path": "karriere/karriere/devops-cloud-engineer-schweiz/index.html",
+        "sha256": "0d92cee519f06a81b668c3f68cc7db4fc6cc00cd0a2fb6e74004bc568d39ef2c"
+      },
+      {
+        "path": "karriere/karriere/direktionsassistenz-executive-assistant-luzern/index.html",
+        "sha256": "865e9d80d802780ca5c682e78fb3cea82a7f901250d205df26584f5ccee0840b"
+      },
+      {
+        "path": "karriere/karriere/erp-abacus-integration-specialist-schweiz/index.html",
+        "sha256": "2503e20128071915ad922e642cf670313a881f07b8fe6851ee2de259f67c1e6e"
+      },
+      {
+        "path": "karriere/karriere/frontend-software-engineer-react-nextjs-schweiz/index.html",
+        "sha256": "163c94e3f95c7ebbf6b286316d5db6e79d8cfca32e8bcf415daa3bab3993bb89"
+      },
+      {
+        "path": "karriere/karriere/index.html",
+        "sha256": "f844bdd3fef463fba31e5b734dca9a52f98c4b0dd1f58eab2e330a4e74166343"
+      },
+      {
+        "path": "karriere/karriere/mobile-app-developer-flutter-react-native-schweiz/index.html",
+        "sha256": "9d1843cea5694251d853efa31df72978f7836b3af3396b6746f8bd02c034d2e7"
+      },
+      {
+        "path": "karriere/karriere/power-platform-crm-developer-schweiz/index.html",
+        "sha256": "69fce0e43d528e7f161b966eeb5f28a2d1e35bffa34a47254b7967df6c5a093d"
+      },
+      {
+        "path": "karriere/karriere/qa-automation-engineer-schweiz/index.html",
+        "sha256": "09206026415763337d8e024b62038213eddd31969798846633f1a8d7f76dc08d"
+      },
+      {
+        "path": "karriere/karriere/sales-development-representative-luzern/index.html",
+        "sha256": "1ffd130b766c85857e60c24d4647d1efee0995fe5761f6619cd26b4e87f70214"
+      },
+      {
+        "path": "karriere/karriere/senior-full-stack-software-engineer-schweiz/index.html",
+        "sha256": "f097146d1585abfc7447da2c0424c9f77cabeafef152654564ca5d48276bc228"
+      },
+      {
+        "path": "karriere/karriere/social-media-manager-luzern-remote/index.html",
+        "sha256": "b768923c210be3e2665b31a8edd7eec9211317b3a8a862512aa3cc6f8775601c"
+      },
+      {
+        "path": "karriere/karriere/solution-architect-technical-lead-schweiz/index.html",
+        "sha256": "617e28748378d4bea414aaae6639437789e9f8745178c1dc72a0eec0931ca021"
+      },
+      {
+        "path": "karriere/karriere/technical-product-owner-business-analyst-schweiz/index.html",
+        "sha256": "69623244ca5f3598dcd85c0612e6489c3b04ea685d9aed27ff21e08293b97464"
+      },
+      {
+        "path": "karriere/karriere/ui-ux-product-designer-schweiz/index.html",
+        "sha256": "a950d1c61d71c61681a5eea0c83c4f8bb8c36fe720d57afc35195d91123d350c"
+      },
+      {
+        "path": "karriere/package-lock.json",
+        "sha256": "bde312764a4cfdd3572efe9ff0dc5fd35484a09a5853acfc1171ed27a9e30863"
+      },
+      {
+        "path": "karriere/package.json",
+        "sha256": "5f26b60233897e1aec3f8fc7128c3855f1cafc28443034e3d405369459a2f067"
+      },
+      {
+        "path": "karriere/qa.test.mjs",
+        "sha256": "038ae40de81212bf0ae670f75611a4bfcd032813ec04919be5dec9aa0d2456e1"
+      },
+      {
+        "path": "karriere/quality-contract.json",
+        "sha256": "421ffa8ef6b6d44bdd291ed20055e16615c391dfc72af39aa3a7a9aca401b684"
+      },
+      {
+        "path": "karriere/quality-contract.test.mjs",
+        "sha256": "4e019692f75ba126ac54dd08555e646de3871f98307d5f3f2c56c44963e76426"
+      },
+      {
+        "path": "karriere/README.md",
+        "sha256": "dcfd3431520a8ed64d840de31b2da1d3b6e79373c632a4cbce43686f8728445d"
+      },
+      {
+        "path": "karriere/robots.txt",
+        "sha256": "a5cd3495793e00f33d738b55b4644f1cc6fd3a4a5296088780c79f8f4a656e24"
+      },
+      {
+        "path": "karriere/sitemap.xml",
+        "sha256": "0365a24eeed4d7db304a9aa56bbec7f5c8a31d417f9d58889eabc06731cc9d63"
+      },
+      {
+        "path": "karriere/vercel.json",
+        "sha256": "07c69853267845997a98ef4d344f33ecba22e5606063027752803f2582d374ef"
+      },
+      {
+        "path": "karriere/verify.mjs",
+        "sha256": "f625cdd7c4b11e3bbc79d48df3f6dd5bb3af6d85ab7fb087236c491d97e2ea54"
+      },
+      {
+        "path": "tests/lp-karriere-release-guard.test.mjs",
+        "sha256": "72810bcd49a7ed6d6888fa6bc7784da1a380f3984f602bfc495a1e33d32f5d8c"
+      }
+    ]
+  },
+  "browserReportSha256": "405f458e83033de6f90d859e05bc737bde72471c09d6741aca9d61610d38a343",
+  "browser": {
+    "schemaVersion": 1,
+    "mode": "LOCAL",
+    "proofModes": [
+      "LOCAL",
+      "MOCKED"
+    ],
+    "result": "PASS",
+    "startedAt": "2026-10-27T18:58:03.528Z",
+    "finishedAt": "2026-10-27T18:58:44.277Z",
+    "passed": true,
+    "counts": {
+      "total": 49,
+      "passed": 49,
+      "failed": 0,
+      "detailPages": 21
+    },
+    "gitCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d",
+    "claimedCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d",
+    "browserVersion": "153.0.8010.0",
+    "dependencyVersions": {
+      "playwrightCore": "1.64.1",
+      "chromiumPackage": "153.0.0"
+    },
+    "build": {
+      "sha256": "dc181d70409d8c2bd9352f5f68f15e1e32528430204b0e64154bd61b0a261f89",
+      "files": [
+        {
+          "path": "apple-touch-icon.png",
+          "sha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a"
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-300-italic.woff2",
+          "sha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a"
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-300-normal.woff2",
+          "sha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7"
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-400-normal.woff2",
+          "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+        },
+        {
+          "path": "assets/fonts/cormorant-garamond-latin-600-normal.woff2",
+          "sha256": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea"
+        },
+        {
+          "path": "assets/fonts/dm-mono-latin-300-normal.woff2",
+          "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7"
+        },
+        {
+          "path": "assets/fonts/dm-mono-latin-400-normal.woff2",
+          "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e"
+        },
+        {
+          "path": "assets/lengacher-partner-logo.webp",
+          "sha256": "191dfdb82d0bf035de020f1e50b878a8c96c3634a57b304ffbe65a162efe92ed"
+        },
+        {
+          "path": "assets/lp-brand/search-index.json",
+          "sha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6"
+        },
+        {
+          "path": "assets/lp-brand/styles.css",
+          "sha256": "cc1695e26d8bf1d6e330ff196be263a8616a45470c804ad71d2558d4cb5de71e"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "sha256": "c490eec8d9e2ea55c8f2bbb13fad236fbf6e13ef94365484a83206a9bec8c97d"
+        },
+        {
+          "path": "favicon-48x48.png",
+          "sha256": "cc92eda9e9a9f55d3d43b856633a29e32ec339fd0ac8e8576923b1e12b349ceb"
+        },
+        {
+          "path": "favicon.ico",
+          "sha256": "3084bf00c0d7f7f041845efb52a9be788740e0f41c0a0f1764e0192a5d42bfea"
+        },
+        {
+          "path": "karriere/account-executive-b2b-luzern/index.html",
+          "sha256": "a441f1175263e4c9882b2354292f2b0f095c2c9635e828917c21d6ec63f9ef57"
+        },
+        {
+          "path": "karriere/ads-specialist-performance-marketing-schweiz/index.html",
+          "sha256": "eb17f1c7c81abf584bb6063e128069d845f40c679956f67cd7cdd16e1c2b600c"
+        },
+        {
+          "path": "karriere/assets/app.js",
+          "sha256": "4d4afe412b5c7913afd2a2fbb88cd11de588bb97f835d7c8f981ff22c7a6ade7"
+        },
+        {
+          "path": "karriere/assets/brand-shell.js",
+          "sha256": "526f8257401e7e433196509d6ad523ea78bc20623dca38d81710dbf847c154f8"
+        },
+        {
+          "path": "karriere/assets/jobs-search.json",
+          "sha256": "226b798894994ca7fed05d2e8308fc4aa398de609aec4330d4e809d37677c30a"
+        },
+        {
+          "path": "karriere/assets/styles.css",
+          "sha256": "3923b981ad2a6e78f25c0ba35da9562c693f08c58a14b9b0356eabc4fe3b5244"
+        },
+        {
+          "path": "karriere/backend-software-engineer-schweiz/index.html",
+          "sha256": "86077af1d4304849669e4800c7388ce66eb69cc1425d2d75c42540f0c201dbdb"
+        },
+        {
+          "path": "karriere/bim-cad-automation-engineer-schweiz/index.html",
+          "sha256": "65ba46d147d82208fda2dbd785ab93a23645c20e4078f337d3a09505abcf0265"
+        },
+        {
+          "path": "karriere/business-development-representative-luzern/index.html",
+          "sha256": "6b68e83ca2db90c934029d00c71c28a6009e0f5e85e09ba6ec8335bcaf82f3cf"
+        },
+        {
+          "path": "karriere/content-creator-luzern-remote/index.html",
+          "sha256": "2fc040a40a16e15c76777037e2ac5ef4ff206b10341f378fbb18cbc25f932876"
+        },
+        {
+          "path": "karriere/cyber-security-cloud-security-engineer-schweiz/index.html",
+          "sha256": "5f277246d1e29bbb20f9e6cab4cda7700202d064cc22efe826afcd08781391f3"
+        },
+        {
+          "path": "karriere/data-ai-engineer-schweiz/index.html",
+          "sha256": "f9d8ffba38d614b3d77ee07a314b20899d42d0df5f8fbdcae4863ab3b2cd2c2a"
+        },
+        {
+          "path": "karriere/devops-cloud-engineer-schweiz/index.html",
+          "sha256": "8da3f536d01bebfd99c3880230819bf407669306cc6c4506f695744396d6c0d9"
+        },
+        {
+          "path": "karriere/direktionsassistenz-executive-assistant-luzern/index.html",
+          "sha256": "3ccd1fcf6aebb8cd6c67b22643383a8e11f66d50a2052d8fa528393aefbf8306"
+        },
+        {
+          "path": "karriere/erp-abacus-integration-specialist-schweiz/index.html",
+          "sha256": "f37d4f67c5748c70a42dc816b05c4541f5a2c60b7a2817759f50d8be854b67ca"
+        },
+        {
+          "path": "karriere/frontend-software-engineer-react-nextjs-schweiz/index.html",
+          "sha256": "34d93492734c9330442d87b8d552685e736ad8fe902b08af3380d11d554604c3"
+        },
+        {
+          "path": "karriere/index.html",
+          "sha256": "d3685c344229e85a5aef05bcb8132879aa8916701e7284b193a9f81e8477a773"
+        },
+        {
+          "path": "karriere/mobile-app-developer-flutter-react-native-schweiz/index.html",
+          "sha256": "4b3c55b6c9641f81c9a108d0b3312b7a74209679ed0eb19e8c3d11549ef2b55d"
+        },
+        {
+          "path": "karriere/power-platform-crm-developer-schweiz/index.html",
+          "sha256": "e6adf2bf82af001773e75dfee2eae3aebba1ae71f4a6561673930b68abe159a4"
+        },
+        {
+          "path": "karriere/qa-automation-engineer-schweiz/index.html",
+          "sha256": "37ddf586c02ca2c1542d2e6bfe72152af8147503d55d0cda2d7378a2ba84e0f7"
+        },
+        {
+          "path": "karriere/sales-development-representative-luzern/index.html",
+          "sha256": "fc02522fc2bc6b0ee2062bd8ea0f233aa3bf395fc0afe49b60742ae652db9c7b"
+        },
+        {
+          "path": "karriere/senior-full-stack-software-engineer-schweiz/index.html",
+          "sha256": "9fbc99d415cb3fc12e306de9f053333d31096044f9a29c7434e2bb44785c8e9f"
+        },
+        {
+          "path": "karriere/social-media-manager-luzern-remote/index.html",
+          "sha256": "fafb70b902dbd288f3ec817bfbce67f97427ac3a0160ef8c2a92b0ccf3d9ee5d"
+        },
+        {
+          "path": "karriere/solution-architect-technical-lead-schweiz/index.html",
+          "sha256": "ead29341ce0c1966130e9287a977690164ce6aa1c0827120024f991dcb80d1d6"
+        },
+        {
+          "path": "karriere/technical-product-owner-business-analyst-schweiz/index.html",
+          "sha256": "22c55da68d1a78a4e63ab741d575a16f59fe167b4f66b23b15afd0a89a46ee93"
+        },
+        {
+          "path": "karriere/ui-ux-product-designer-schweiz/index.html",
+          "sha256": "2bad54cb74c9572a1fc5c3941665d74030b62043741cbdc1108989759ad880f6"
+        },
+        {
+          "path": "robots.txt",
+          "sha256": "a5cd3495793e00f33d738b55b4644f1cc6fd3a4a5296088780c79f8f4a656e24"
+        },
+        {
+          "path": "safari-pinned-tab.svg",
+          "sha256": "9177f7f846a5afc7ec37af4554495be0773507ef87098634a925d2220f457458"
+        },
+        {
+          "path": "sitemap.xml",
+          "sha256": "0365a24eeed4d7db304a9aa56bbec7f5c8a31d417f9d58889eabc06731cc9d63"
+        }
+      ]
+    },
+    "safety": {
+      "externalWritesSent": 0,
+      "applicationPostsMocked": 4,
+      "serviceWorkersBlocked": true,
+      "externalRequestsBlocked": true
+    },
+    "proofLimits": [
+      "Application responses are mocked; no fresh CRM record, email delivery or calendar booking is verified."
+    ],
+    "checks": [
+      {
+        "name": "Catalog, role options and generated search preserve every job",
+        "passed": true,
+        "durationMs": 19
+      },
+      {
+        "name": "Visible original logo, actual original fonts and palette",
+        "passed": true,
+        "durationMs": 61
+      },
+      {
+        "name": "Primary action contrast and full-width content geometry",
+        "passed": true,
+        "durationMs": 2
+      },
+      {
+        "name": "Complete header and footer retain navigation and contact destinations",
+        "passed": true,
+        "durationMs": 32
+      },
+      {
+        "name": "Desktop dropdown opens and closes with Escape",
+        "passed": true,
+        "durationMs": 74
+      },
+      {
+        "name": "Category filter: IT & Software",
+        "passed": true,
+        "durationMs": 134
+      },
+      {
+        "name": "Category filter: Sales",
+        "passed": true,
+        "durationMs": 206
+      },
+      {
+        "name": "Category filter: Marketing",
+        "passed": true,
+        "durationMs": 229
+      },
+      {
+        "name": "Category filter: Backoffice",
+        "passed": true,
+        "durationMs": 4602
+      },
+      {
+        "name": "Keyword search, empty state and reset",
+        "passed": true,
+        "durationMs": 123
+      },
+      {
+        "name": "Location and experience filters combine and reset",
+        "passed": true,
+        "durationMs": 61
+      },
+      {
+        "name": "Website search includes jobs and retains original website content",
+        "passed": true,
+        "durationMs": 186
+      },
+      {
+        "name": "FAQ and verified career conversation link",
+        "passed": true,
+        "durationMs": 209
+      },
+      {
+        "name": "Responsive layout and screenshots at 1440px",
+        "passed": true,
+        "durationMs": 4141
+      },
+      {
+        "name": "Responsive layout and screenshots at 390px",
+        "passed": true,
+        "durationMs": 1016
+      },
+      {
+        "name": "Responsive layout and screenshots at 320px",
+        "passed": true,
+        "durationMs": 784
+      },
+      {
+        "name": "Mobile navigation, submenu and Escape focus restoration",
+        "passed": true,
+        "durationMs": 404
+      },
+      {
+        "name": "Quick Apply selects the intended role and its source offer",
+        "passed": true,
+        "durationMs": 173
+      },
+      {
+        "name": "Explicit consent is initially empty and blocks transmission",
+        "passed": true,
+        "durationMs": 89
+      },
+      {
+        "name": "LinkedIn or PDF is required",
+        "passed": true,
+        "durationMs": 76
+      },
+      {
+        "name": "Invalid LinkedIn address is rejected before transmission",
+        "passed": true,
+        "durationMs": 75
+      },
+      {
+        "name": "Mocked upstream failure preserves inputs and enables retry",
+        "passed": true,
+        "durationMs": 73
+      },
+      {
+        "name": "HTTP 200 with ok:false is not success and keeps the retry ID",
+        "passed": true,
+        "durationMs": 84
+      },
+      {
+        "name": "Confirmed mocked response resets fields and consent",
+        "passed": true,
+        "durationMs": 90
+      },
+      {
+        "name": "Invalid PDF signature is rejected asynchronously",
+        "passed": true,
+        "durationMs": 81
+      },
+      {
+        "name": "PDF larger than 2 MB is rejected",
+        "passed": true,
+        "durationMs": 337
+      },
+      {
+        "name": "PDF alternative submits only to the mock and resets after confirmation",
+        "passed": true,
+        "durationMs": 82
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: account-executive-b2b-luzern",
+        "passed": true,
+        "durationMs": 350
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: ads-specialist-performance-marketing-schweiz",
+        "passed": true,
+        "durationMs": 208
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: backend-software-engineer-schweiz",
+        "passed": true,
+        "durationMs": 228
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: bim-cad-automation-engineer-schweiz",
+        "passed": true,
+        "durationMs": 5753
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: business-development-representative-luzern",
+        "passed": true,
+        "durationMs": 138
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: content-creator-luzern-remote",
+        "passed": true,
+        "durationMs": 211
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: cyber-security-cloud-security-engineer-schweiz",
+        "passed": true,
+        "durationMs": 330
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: data-ai-engineer-schweiz",
+        "passed": true,
+        "durationMs": 195
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: devops-cloud-engineer-schweiz",
+        "passed": true,
+        "durationMs": 2542
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: direktionsassistenz-executive-assistant-luzern",
+        "passed": true,
+        "durationMs": 136
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: erp-abacus-integration-specialist-schweiz",
+        "passed": true,
+        "durationMs": 222
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: frontend-software-engineer-react-nextjs-schweiz",
+        "passed": true,
+        "durationMs": 279
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: mobile-app-developer-flutter-react-native-schweiz",
+        "passed": true,
+        "durationMs": 315
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: power-platform-crm-developer-schweiz",
+        "passed": true,
+        "durationMs": 1398
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: qa-automation-engineer-schweiz",
+        "passed": true,
+        "durationMs": 226
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: sales-development-representative-luzern",
+        "passed": true,
+        "durationMs": 337
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: senior-full-stack-software-engineer-schweiz",
+        "passed": true,
+        "durationMs": 402
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: social-media-manager-luzern-remote",
+        "passed": true,
+        "durationMs": 1349
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: solution-architect-technical-lead-schweiz",
+        "passed": true,
+        "durationMs": 215
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: technical-product-owner-business-analyst-schweiz",
+        "passed": true,
+        "durationMs": 338
+      },
+      {
+        "name": "Detail page preserves role, schema and shell: ui-ux-product-designer-schweiz",
+        "passed": true,
+        "durationMs": 356
+      },
+      {
+        "name": "All details tested; no browser errors, missing assets or outbound requests",
+        "passed": true,
+        "durationMs": 0
+      }
+    ],
+    "screenshots": [
+      {
+        "file": "screenshots/overview-1440.png",
+        "sha256": "b536e6c7304a5bed25dca71cd13ab8ddb862f330dabfda8bffcb3f9ecc2d9327",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      },
+      {
+        "file": "screenshots/application-1440.png",
+        "sha256": "a381255e46c0250b31cc0e0c9fe8e0fff9abc35bb7174c20395565eb4ae1275b",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      },
+      {
+        "file": "screenshots/footer-1440.png",
+        "sha256": "1e2c55a53f3dbfbd29f1c219e431dcdb13d992b316c1459744c47d293a9347ab",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      },
+      {
+        "file": "screenshots/overview-390.png",
+        "sha256": "3c831a4c7e0f6f49574b6a1c5a4d739cf23e35761d050447a7328da35d72cbb7",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "file": "screenshots/application-390.png",
+        "sha256": "04196bff813383eae6b5aaf4f0b3471ed532a192b708afa18c71c807fab9839b",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "file": "screenshots/footer-390.png",
+        "sha256": "3f1961f7f255fbf8c24f7195ef8cf04edc1c57ecd7766efc782a64040ae985fd",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "file": "screenshots/overview-320.png",
+        "sha256": "9d44f68f22c902ef4cbd9e29b6e2ccd86ed19d62df13ac273ecd26c5453009c3",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        }
+      },
+      {
+        "file": "screenshots/application-320.png",
+        "sha256": "ede1b2e24c4013dbad228f0019573180ebcec254cc8957fb87d985e21d0955b3",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        }
+      },
+      {
+        "file": "screenshots/footer-320.png",
+        "sha256": "ca73269585db89d78e69cb01fa9a9d9e5ae6c5b27e32bf1424954444ba428dfe",
+        "url": "http://localhost:34965/karriere",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        }
+      }
+    ],
+    "browserErrors": [],
+    "resourceErrors": [],
+    "blockedRequests": [],
+    "fatalError": null
+  },
+  "completedAt": "2026-10-27T18:58:44.299Z"
+}

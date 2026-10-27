@@ -1,0 +1,11 @@
+{
+  "expectation": "Wrong Vercel project must fail before building; prior passing evidence must remain",
+  "mode": "LOCAL",
+  "result": "PASS",
+  "verifierExitCode": 1,
+  "error": "Wrong or unverified Vercel project\n+ actual - expected\n\n+ 'prj_wrong_target_fixture'\n- 'prj_aai674bWi0ZXbmKh2ocCCRuSSv5o'\n       ^\n",
+  "negativeRunId": "2026-10-27T19-04-50-427Z-7d566af4-2a7f-4aa1-8324-c20622dc2fb4",
+  "previousPassingRunId": "2026-10-27T18-58-03-254Z-136f4739-6786-4aba-a45c-95dc37bcf1dd",
+  "previousPassingRunPreserved": true,
+  "sourceCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d"
+}

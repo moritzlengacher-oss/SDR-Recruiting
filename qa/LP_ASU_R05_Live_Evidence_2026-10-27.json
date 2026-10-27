@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "mode": "LIVE",
+  "result": "PASS",
+  "checkedAt": "2026-10-27T19:03:24.898Z",
+  "target": "https://jobs.lengacher-partner.ch",
+  "projectId": "prj_aai674bWi0ZXbmKh2ocCCRuSSv5o",
+  "deploymentId": "dpl_AXQqs6JG3pmt5FpoNfL9ewvN2Fxg",
+  "deploymentCommit": "df4f80e79dc173bee13ee16b69aa85b601a69998",
+  "candidateCommit": "4e6637c7023abf71e6a7c4c53203f8e668f1398d",
+  "candidateBuildSha256": "dc181d70409d8c2bd9352f5f68f15e1e32528430204b0e64154bd61b0a261f89",
+  "identitySource": "Vercel deployment metadata read separately; merge and tested candidate share Git tree 7425c0f9e296342f599b11476966dff8cec245ca",
+  "counts": {
+    "files": 42,
+    "html": 22,
+    "passed": 42,
+    "failed": 0
+  },
+  "api": {
+    "method": "GET",
+    "http": 405,
+    "cacheControl": "no-store",
+    "result": "PASS"
+  },
+  "files": [
+    {
+      "path": "apple-touch-icon.png",
+      "url": "https://jobs.lengacher-partner.ch/apple-touch-icon.png",
+      "http": 200,
+      "sha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a",
+      "expectedSha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/cormorant-garamond-latin-300-italic.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/cormorant-garamond-latin-300-italic.woff2",
+      "http": 200,
+      "sha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a",
+      "expectedSha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/cormorant-garamond-latin-300-normal.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/cormorant-garamond-latin-300-normal.woff2",
+      "http": 200,
+      "sha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7",
+      "expectedSha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/cormorant-garamond-latin-400-normal.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/cormorant-garamond-latin-400-normal.woff2",
+      "http": 200,
+      "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+      "expectedSha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/cormorant-garamond-latin-600-normal.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/cormorant-garamond-latin-600-normal.woff2",
+      "http": 200,
+      "sha256": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea",
+      "expectedSha256": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/dm-mono-latin-300-normal.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/dm-mono-latin-300-normal.woff2",
+      "http": 200,
+      "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7",
+      "expectedSha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/fonts/dm-mono-latin-400-normal.woff2",
+      "url": "https://jobs.lengacher-partner.ch/assets/fonts/dm-mono-latin-400-normal.woff2",
+      "http": 200,
+      "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e",
+      "expectedSha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/lengacher-partner-logo.webp",
+      "url": "https://jobs.lengacher-partner.ch/assets/lengacher-partner-logo.webp",
+      "http": 200,
+      "sha256": "191dfdb82d0bf035de020f1e50b878a8c96c3634a57b304ffbe65a162efe92ed",
+      "expectedSha256": "191dfdb82d0bf035de020f1e50b878a8c96c3634a57b304ffbe65a162efe92ed",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/lp-brand/search-index.json",
+      "url": "https://jobs.lengacher-partner.ch/assets/lp-brand/search-index.json",
+      "http": 200,
+      "sha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6",
+      "expectedSha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6",
+      "result": "PASS"
+    },
+    {
+      "path": "assets/lp-brand/styles.css",
+      "url": "https://jobs.lengacher-partner.ch/assets/lp-brand/styles.css?v=20261027",
+      "http": 200,
+      "sha256": "cc1695e26d8bf1d6e330ff196be263a8616a45470c804ad71d2558d4cb5de71e",
+      "expectedSha256": "cc1695e26d8bf1d6e330ff196be263a8616a45470c804ad71d2558d4cb5de71e",
+      "result": "PASS"
+    },
+    {
+      "path": "favicon-32x32.png",
+      "url": "https://jobs.lengacher-partner.ch/favicon-32x32.png",
+      "http": 200,
+      "sha256": "c490eec8d9e2ea55c8f2bbb13fad236fbf6e13ef94365484a83206a9bec8c97d",
+      "expectedSha256": "c490eec8d9e2ea55c8f2bbb13fad236fbf6e13ef94365484a83206a9bec8c97d",
+      "result": "PASS"
+    },
+    {
+      "path": "favicon-48x48.png",
+      "url": "https://jobs.lengacher-partner.ch/favicon-48x48.png",
+      "http": 200,
+      "sha256": "cc92eda9e9a9f55d3d43b856633a29e32ec339fd0ac8e8576923b1e12b349ceb",
+      "expectedSha256": "cc92eda9e9a9f55d3d43b856633a29e32ec339fd0ac8e8576923b1e12b349ceb",
+      "result": "PASS"
+    },
+    {
+      "path": "favicon.ico",
+      "url": "https://jobs.lengacher-partner.ch/favicon.ico",
+      "http": 200,
+      "sha256": "3084bf00c0d7f7f041845efb52a9be788740e0f41c0a0f1764e0192a5d42bfea",
+      "expectedSha256": "3084bf00c0d7f7f041845efb52a9be788740e0f41c0a0f1764e0192a5d42bfea",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/account-executive-b2b-luzern/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/account-executive-b2b-luzern",
+      "http": 200,
+      "sha256": "a441f1175263e4c9882b2354292f2b0f095c2c9635e828917c21d6ec63f9ef57",
+      "expectedSha256": "a441f1175263e4c9882b2354292f2b0f095c2c9635e828917c21d6ec63f9ef57",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/ads-specialist-performance-marketing-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/ads-specialist-performance-marketing-schweiz",
+      "http": 200,
+      "sha256": "eb17f1c7c81abf584bb6063e128069d845f40c679956f67cd7cdd16e1c2b600c",
+      "expectedSha256": "eb17f1c7c81abf584bb6063e128069d845f40c679956f67cd7cdd16e1c2b600c",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/assets/app.js",
+      "url": "https://jobs.lengacher-partner.ch/karriere/assets/app.js?v=20261027",
+      "http": 200,
+      "sha256": "4d4afe412b5c7913afd2a2fbb88cd11de588bb97f835d7c8f981ff22c7a6ade7",
+      "expectedSha256": "4d4afe412b5c7913afd2a2fbb88cd11de588bb97f835d7c8f981ff22c7a6ade7",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/assets/brand-shell.js",
+      "url": "https://jobs.lengacher-partner.ch/karriere/assets/brand-shell.js?v=20261027",
+      "http": 200,
+      "sha256": "526f8257401e7e433196509d6ad523ea78bc20623dca38d81710dbf847c154f8",
+      "expectedSha256": "526f8257401e7e433196509d6ad523ea78bc20623dca38d81710dbf847c154f8",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/assets/jobs-search.json",
+      "url": "https://jobs.lengacher-partner.ch/karriere/assets/jobs-search.json",
+      "http": 200,
+      "sha256": "226b798894994ca7fed05d2e8308fc4aa398de609aec4330d4e809d37677c30a",
+      "expectedSha256": "226b798894994ca7fed05d2e8308fc4aa398de609aec4330d4e809d37677c30a",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/assets/styles.css",
+      "url": "https://jobs.lengacher-partner.ch/karriere/assets/styles.css?v=20261027",
+      "http": 200,
+      "sha256": "3923b981ad2a6e78f25c0ba35da9562c693f08c58a14b9b0356eabc4fe3b5244",
+      "expectedSha256": "3923b981ad2a6e78f25c0ba35da9562c693f08c58a14b9b0356eabc4fe3b5244",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/backend-software-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/backend-software-engineer-schweiz",
+      "http": 200,
+      "sha256": "86077af1d4304849669e4800c7388ce66eb69cc1425d2d75c42540f0c201dbdb",
+      "expectedSha256": "86077af1d4304849669e4800c7388ce66eb69cc1425d2d75c42540f0c201dbdb",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/bim-cad-automation-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/bim-cad-automation-engineer-schweiz",
+      "http": 200,
+      "sha256": "65ba46d147d82208fda2dbd785ab93a23645c20e4078f337d3a09505abcf0265",
+      "expectedSha256": "65ba46d147d82208fda2dbd785ab93a23645c20e4078f337d3a09505abcf0265",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/business-development-representative-luzern/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/business-development-representative-luzern",
+      "http": 200,
+      "sha256": "6b68e83ca2db90c934029d00c71c28a6009e0f5e85e09ba6ec8335bcaf82f3cf",
+      "expectedSha256": "6b68e83ca2db90c934029d00c71c28a6009e0f5e85e09ba6ec8335bcaf82f3cf",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/content-creator-luzern-remote/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/content-creator-luzern-remote",
+      "http": 200,
+      "sha256": "2fc040a40a16e15c76777037e2ac5ef4ff206b10341f378fbb18cbc25f932876",
+      "expectedSha256": "2fc040a40a16e15c76777037e2ac5ef4ff206b10341f378fbb18cbc25f932876",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/cyber-security-cloud-security-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/cyber-security-cloud-security-engineer-schweiz",
+      "http": 200,
+      "sha256": "5f277246d1e29bbb20f9e6cab4cda7700202d064cc22efe826afcd08781391f3",
+      "expectedSha256": "5f277246d1e29bbb20f9e6cab4cda7700202d064cc22efe826afcd08781391f3",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/data-ai-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/data-ai-engineer-schweiz",
+      "http": 200,
+      "sha256": "f9d8ffba38d614b3d77ee07a314b20899d42d0df5f8fbdcae4863ab3b2cd2c2a",
+      "expectedSha256": "f9d8ffba38d614b3d77ee07a314b20899d42d0df5f8fbdcae4863ab3b2cd2c2a",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/devops-cloud-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/devops-cloud-engineer-schweiz",
+      "http": 200,
+      "sha256": "8da3f536d01bebfd99c3880230819bf407669306cc6c4506f695744396d6c0d9",
+      "expectedSha256": "8da3f536d01bebfd99c3880230819bf407669306cc6c4506f695744396d6c0d9",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/direktionsassistenz-executive-assistant-luzern/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/direktionsassistenz-executive-assistant-luzern",
+      "http": 200,
+      "sha256": "3ccd1fcf6aebb8cd6c67b22643383a8e11f66d50a2052d8fa528393aefbf8306",
+      "expectedSha256": "3ccd1fcf6aebb8cd6c67b22643383a8e11f66d50a2052d8fa528393aefbf8306",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/erp-abacus-integration-specialist-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/erp-abacus-integration-specialist-schweiz",
+      "http": 200,
+      "sha256": "f37d4f67c5748c70a42dc816b05c4541f5a2c60b7a2817759f50d8be854b67ca",
+      "expectedSha256": "f37d4f67c5748c70a42dc816b05c4541f5a2c60b7a2817759f50d8be854b67ca",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/frontend-software-engineer-react-nextjs-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/frontend-software-engineer-react-nextjs-schweiz",
+      "http": 200,
+      "sha256": "34d93492734c9330442d87b8d552685e736ad8fe902b08af3380d11d554604c3",
+      "expectedSha256": "34d93492734c9330442d87b8d552685e736ad8fe902b08af3380d11d554604c3",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere",
+      "http": 200,
+      "sha256": "d3685c344229e85a5aef05bcb8132879aa8916701e7284b193a9f81e8477a773",
+      "expectedSha256": "d3685c344229e85a5aef05bcb8132879aa8916701e7284b193a9f81e8477a773",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/mobile-app-developer-flutter-react-native-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/mobile-app-developer-flutter-react-native-schweiz",
+      "http": 200,
+      "sha256": "4b3c55b6c9641f81c9a108d0b3312b7a74209679ed0eb19e8c3d11549ef2b55d",
+      "expectedSha256": "4b3c55b6c9641f81c9a108d0b3312b7a74209679ed0eb19e8c3d11549ef2b55d",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/power-platform-crm-developer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/power-platform-crm-developer-schweiz",
+      "http": 200,
+      "sha256": "e6adf2bf82af001773e75dfee2eae3aebba1ae71f4a6561673930b68abe159a4",
+      "expectedSha256": "e6adf2bf82af001773e75dfee2eae3aebba1ae71f4a6561673930b68abe159a4",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/qa-automation-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/qa-automation-engineer-schweiz",
+      "http": 200,
+      "sha256": "37ddf586c02ca2c1542d2e6bfe72152af8147503d55d0cda2d7378a2ba84e0f7",
+      "expectedSha256": "37ddf586c02ca2c1542d2e6bfe72152af8147503d55d0cda2d7378a2ba84e0f7",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/sales-development-representative-luzern/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/sales-development-representative-luzern",
+      "http": 200,
+      "sha256": "fc02522fc2bc6b0ee2062bd8ea0f233aa3bf395fc0afe49b60742ae652db9c7b",
+      "expectedSha256": "fc02522fc2bc6b0ee2062bd8ea0f233aa3bf395fc0afe49b60742ae652db9c7b",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/senior-full-stack-software-engineer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/senior-full-stack-software-engineer-schweiz",
+      "http": 200,
+      "sha256": "9fbc99d415cb3fc12e306de9f053333d31096044f9a29c7434e2bb44785c8e9f",
+      "expectedSha256": "9fbc99d415cb3fc12e306de9f053333d31096044f9a29c7434e2bb44785c8e9f",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/social-media-manager-luzern-remote/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/social-media-manager-luzern-remote",
+      "http": 200,
+      "sha256": "fafb70b902dbd288f3ec817bfbce67f97427ac3a0160ef8c2a92b0ccf3d9ee5d",
+      "expectedSha256": "fafb70b902dbd288f3ec817bfbce67f97427ac3a0160ef8c2a92b0ccf3d9ee5d",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/solution-architect-technical-lead-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/solution-architect-technical-lead-schweiz",
+      "http": 200,
+      "sha256": "ead29341ce0c1966130e9287a977690164ce6aa1c0827120024f991dcb80d1d6",
+      "expectedSha256": "ead29341ce0c1966130e9287a977690164ce6aa1c0827120024f991dcb80d1d6",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/technical-product-owner-business-analyst-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/technical-product-owner-business-analyst-schweiz",
+      "http": 200,
+      "sha256": "22c55da68d1a78a4e63ab741d575a16f59fe167b4f66b23b15afd0a89a46ee93",
+      "expectedSha256": "22c55da68d1a78a4e63ab741d575a16f59fe167b4f66b23b15afd0a89a46ee93",
+      "result": "PASS"
+    },
+    {
+      "path": "karriere/ui-ux-product-designer-schweiz/index.html",
+      "url": "https://jobs.lengacher-partner.ch/karriere/ui-ux-product-designer-schweiz",
+      "http": 200,
+      "sha256": "2bad54cb74c9572a1fc5c3941665d74030b62043741cbdc1108989759ad880f6",
+      "expectedSha256": "2bad54cb74c9572a1fc5c3941665d74030b62043741cbdc1108989759ad880f6",
+      "result": "PASS"
+    },
+    {
+      "path": "robots.txt",
+      "url": "https://jobs.lengacher-partner.ch/robots.txt",
+      "http": 200,
+      "sha256": "a5cd3495793e00f33d738b55b4644f1cc6fd3a4a5296088780c79f8f4a656e24",
+      "expectedSha256": "a5cd3495793e00f33d738b55b4644f1cc6fd3a4a5296088780c79f8f4a656e24",
+      "result": "PASS"
+    },
+    {
+      "path": "safari-pinned-tab.svg",
+      "url": "https://jobs.lengacher-partner.ch/safari-pinned-tab.svg",
+      "http": 200,
+      "sha256": "9177f7f846a5afc7ec37af4554495be0773507ef87098634a925d2220f457458",
+      "expectedSha256": "9177f7f846a5afc7ec37af4554495be0773507ef87098634a925d2220f457458",
+      "result": "PASS"
+    },
+    {
+      "path": "sitemap.xml",
+      "url": "https://jobs.lengacher-partner.ch/sitemap.xml",
+      "http": 200,
+      "sha256": "0365a24eeed4d7db304a9aa56bbec7f5c8a31d417f9d58889eabc06731cc9d63",
+      "expectedSha256": "0365a24eeed4d7db304a9aa56bbec7f5c8a31d417f9d58889eabc06731cc9d63",
+      "result": "PASS"
+    }
+  ],
+  "limits": [
+    "Read-only deployed artifact verification. No successful application POST, CRM record, email delivery or booking sent."
+  ]
+}
