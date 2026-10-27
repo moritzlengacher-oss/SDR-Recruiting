@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "contractId": "lp-karriere-original-brand-and-function-parity",
+  "purpose": "Prevent silent replacement of approved identity, functions, integration or release target. This change adds verification controls and corrects submission-ID reset after confirmed application success; it does not redesign the site.",
+  "baseline": {
+    "acceptedCode": "9b1e2da60ebdafdca9ddcf3a57f6ab90b1f1f858",
+    "acceptedEvidence": "../qa/LP_Karriere_ASU_R04_Branding_QA_2026-10-27.md",
+    "sourceCaptured": "2026-10-27",
+    "referenceRule": "The approved source is authoritative. A candidate must not redefine its own expected values to obtain a passing result."
+  },
+  "authorizedChanges": [
+    "Quality instructions, acceptance contract, verification tooling, CI and evidence retention.",
+    "Provider enforcement only within the verified career project and existing user authorization.",
+    "Clear the client submission identifier only after an HTTP-success response with ok:true, so the next new application gets a new ID; retain the same ID on retries. No relay, routing, recipient or delivery-contract change. The client file also gains one final LF; no other bytes differ from the approved baseline."
+  ],
+  "target": {
+    "repository": "moritzlengacher-oss/SDR-Recruiting",
+    "repositoryId": 1258806588,
+    "provider": "vercel",
+    "projectName": "lp-karriere",
+    "projectId": "prj_aai674bWi0ZXbmKh2ocCCRuSSv5o",
+    "teamId": "team_D2HfAoMX5gjDjxSQrYJYaBsu",
+    "rootDirectory": "karriere",
+    "outputDirectory": "public",
+    "publicOrigin": "https://jobs.lengacher-partner.ch",
+    "origin": "https://jobs-app.lengacher-partner.ch",
+    "sourceFilesOutsideRootDirectory": true,
+    "proxyProject": {
+      "name": "ic",
+      "id": "prj_O9fd4QxGfe5vdDyU12UHOax0GimH",
+      "policy": "preserve_existing_host_proxy"
+    }
+  },
+  "brand": {
+    "source": "https://www.lengacher-partner.ch/",
+    "fonts": [
+      "Cormorant Garamond",
+      "DM Mono"
+    ],
+    "palette": {
+      "paper": "#f5f2ec",
+      "ink": "#0d0d0d",
+      "gold": "#b8975a",
+      "navy": "#1a2744"
+    },
+    "message": "KI, Prozesse und Wachstum für Schweizer KMU",
+    "assets": {
+      "assets/lp-brand/styles.css": {
+        "bytes": 512216,
+        "sha256": "cc1695e26d8bf1d6e330ff196be263a8616a45470c804ad71d2558d4cb5de71e"
+      },
+      "favicon-32x32.png": {
+        "bytes": 1298,
+        "sha256": "c490eec8d9e2ea55c8f2bbb13fad236fbf6e13ef94365484a83206a9bec8c97d"
+      },
+      "assets/fonts/cormorant-garamond-latin-400-normal.woff2": {
+        "bytes": 22876,
+        "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2"
+      },
+      "assets/fonts/dm-mono-latin-300-normal.woff2": {
+        "bytes": 14784,
+        "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7"
+      },
+      "favicon.ico": {
+        "bytes": 609,
+        "sha256": "3084bf00c0d7f7f041845efb52a9be788740e0f41c0a0f1764e0192a5d42bfea"
+      },
+      "assets/fonts/cormorant-garamond-latin-300-italic.woff2": {
+        "bytes": 22484,
+        "sha256": "b931f0a45f9d8a362e45e950c004ff00c8ab7932c2c401b4db9c2b7b9247f01a"
+      },
+      "assets/lengacher-partner-logo.webp": {
+        "bytes": 16090,
+        "sha256": "191dfdb82d0bf035de020f1e50b878a8c96c3634a57b304ffbe65a162efe92ed"
+      },
+      "favicon-48x48.png": {
+        "bytes": 2101,
+        "sha256": "cc92eda9e9a9f55d3d43b856633a29e32ec339fd0ac8e8576923b1e12b349ceb"
+      },
+      "safari-pinned-tab.svg": {
+        "bytes": 354,
+        "sha256": "9177f7f846a5afc7ec37af4554495be0773507ef87098634a925d2220f457458"
+      },
+      "apple-touch-icon.png": {
+        "bytes": 8843,
+        "sha256": "437b94ce0eb13be1dcd2be25fb1bee170666a234f84bbcca583313105d4f895a"
+      },
+      "assets/fonts/cormorant-garamond-latin-600-normal.woff2": {
+        "bytes": 23396,
+        "sha256": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea"
+      },
+      "assets/fonts/cormorant-garamond-latin-300-normal.woff2": {
+        "bytes": 21908,
+        "sha256": "8973d65ce70fb03cee5788acbcc36bc9e74bda2227bbef99f26c826514cc79f7"
+      },
+      "assets/fonts/dm-mono-latin-400-normal.woff2": {
+        "bytes": 14820,
+        "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e"
+      },
+      "assets/lp-brand/search-index.json": {
+        "bytes": 27661,
+        "sha256": "f5d88f66ddebee9f84b9a14e7a6e65910c71efcfe84087cd05500ee348f7d0e6"
+      }
+    },
+    "effectivePalette": {
+      "paper": "#f5f2ec",
+      "ink": "#0d0d0d",
+      "gold": "#76591f",
+      "navy": "#1a2744"
+    },
+    "paletteProvenance": "The unchanged original styles.css declares base gold #b8975a and later overrides --gold to #76591f in its accessibility block. Runtime QA must follow the approved cascade rather than replace that original CSS."
+  },
+  "protectedReferences": {
+    "brand/source-manifest.json": "7d4df6c513e6f440275a11dcf089d34640e470dfcd9973861e799fc1603402d3",
+    "brand/header.html": "2b1e0dcdc69b95478bae7a17390a24741c64bd02a0cfee3cc18cc575b20b20b5",
+    "brand/footer.html": "fb5eec3df562c1434be4d86223b57cb1140f1ee5b29ce6685b70231b2802c182",
+    "brand/search.html": "bfbfc1458b1ff13643a06ae029e348026079dea0a7eb0f5fb1336b8e97b1882a",
+    "brand/original-assets.b64": "a9f9b1d71855c1e0725854aad2b6caf9c59dc744571aa805740d010c52ab41a5",
+    "api/career-application.js": "88ef4cc241b47295433f25fa267d0ada0d4cdd31a819c6059c27249d9e2aa97d"
+  },
+  "jobs": [
+    {
+      "slug": "account-executive-b2b-luzern",
+      "role": "Account Executive B2B",
+      "offer": "career-account-executive",
+      "category": "Sales",
+      "location": "Luzern / Hybrid",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "ads-specialist-performance-marketing-schweiz",
+      "role": "Ads Specialist / Performance Marketing",
+      "offer": "career-ads-specialist",
+      "category": "Marketing",
+      "location": "Luzern / Remote",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "backend-software-engineer-schweiz",
+      "role": "Backend Software Engineer",
+      "offer": "career-backend-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "bim-cad-automation-engineer-schweiz",
+      "role": "BIM/CAD Automation Engineer",
+      "offer": "career-bim-cad-automation-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "business-development-representative-luzern",
+      "role": "Business Development Representative (BDR)",
+      "offer": "career-bdr",
+      "category": "Sales",
+      "location": "Luzern / Hybrid",
+      "level": "Professional"
+    },
+    {
+      "slug": "content-creator-luzern-remote",
+      "role": "Content Creator",
+      "offer": "career-content-creator",
+      "category": "Marketing",
+      "location": "Luzern / Remote",
+      "level": "Professional"
+    },
+    {
+      "slug": "cyber-security-cloud-security-engineer-schweiz",
+      "role": "Cyber Security & Cloud Security Engineer",
+      "offer": "career-cyber-cloud-security-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "data-ai-engineer-schweiz",
+      "role": "Data & AI Engineer",
+      "offer": "career-data-ai-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "devops-cloud-engineer-schweiz",
+      "role": "DevOps & Cloud Engineer",
+      "offer": "career-devops-cloud-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "direktionsassistenz-executive-assistant-luzern",
+      "role": "Executive Assistant / Operations Assistant",
+      "offer": "career-executive-assistant",
+      "category": "Backoffice",
+      "location": "Luzern / Hybrid",
+      "level": "Professional"
+    },
+    {
+      "slug": "erp-abacus-integration-specialist-schweiz",
+      "role": "ERP & Abacus Integration Specialist",
+      "offer": "career-erp-abacus-integration-specialist",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "frontend-software-engineer-react-nextjs-schweiz",
+      "role": "Frontend Software Engineer",
+      "offer": "career-frontend-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "mobile-app-developer-flutter-react-native-schweiz",
+      "role": "Mobile App Developer",
+      "offer": "career-mobile-app-developer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "power-platform-crm-developer-schweiz",
+      "role": "Microsoft Power Platform & CRM Developer",
+      "offer": "career-power-platform-crm-developer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "qa-automation-engineer-schweiz",
+      "role": "QA Automation Engineer",
+      "offer": "career-qa-automation-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "sales-development-representative-luzern",
+      "role": "Sales Development Representative (SDR)",
+      "offer": "career-sdr",
+      "category": "Sales",
+      "location": "Luzern / Hybrid",
+      "level": "Entry / Junior"
+    },
+    {
+      "slug": "senior-full-stack-software-engineer-schweiz",
+      "role": "Senior Full-Stack Software Engineer",
+      "offer": "career-senior-full-stack-engineer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Senior / Professional"
+    },
+    {
+      "slug": "social-media-manager-luzern-remote",
+      "role": "Social Media Manager",
+      "offer": "career-social-media-manager",
+      "category": "Marketing",
+      "location": "Luzern / Remote",
+      "level": "Professional"
+    },
+    {
+      "slug": "solution-architect-technical-lead-schweiz",
+      "role": "Solution Architect / Technical Lead",
+      "offer": "career-solution-architect-technical-lead",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Senior / Expert"
+    },
+    {
+      "slug": "technical-product-owner-business-analyst-schweiz",
+      "role": "Technical Product Owner / Business Analyst",
+      "offer": "career-technical-product-owner",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    },
+    {
+      "slug": "ui-ux-product-designer-schweiz",
+      "role": "UI/UX Product Designer",
+      "offer": "career-ui-ux-product-designer",
+      "category": "IT & Software",
+      "location": "Luzern / Hybrid / Remote CH",
+      "level": "Professional / Senior"
+    }
+  ],
+  "jobInventorySha256": "fcce0e2625890af54586d9bbec6445fe38607787cc6f7f90db38d7d2ccdbea32",
+  "initiative": {
+    "role": "Initiativbewerbung",
+    "offer": "career-initiative"
+  },
+  "features": [
+    {
+      "id": "original-brand",
+      "mandatory": true,
+      "criterion": "Use original logo, favicons, six font files, palette and approved brand wording.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "brand-guard.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "shared-shell",
+      "mandatory": true,
+      "criterion": "Use the complete approved header, footer and search fragment on all pages.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "brand-guard.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "corporate-and-career-search",
+      "mandatory": true,
+      "criterion": "Search the corporate index and the overview plus all approved job details.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "approved-job-catalog",
+      "mandatory": true,
+      "criterion": "Preserve all 21 approved slugs, role titles and offer mappings.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "qa.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "category-and-keyword-filters",
+      "mandatory": true,
+      "criterion": "Filter jobs by category and keyword with a correct result count and empty state.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "location-level-reset",
+      "mandatory": true,
+      "criterion": "Combine location and experience filters and reset all filters.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "quick-apply",
+      "mandatory": true,
+      "criterion": "Prefill the selected role and offer and preserve the quick-apply deep link.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "employer-content",
+      "mandatory": true,
+      "criterion": "Preserve benefits, working-day information, application process and FAQ.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "career-booking",
+      "mandatory": true,
+      "criterion": "Retain the verified career conversation link on all 22 pages.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "application-fields-consent",
+      "mandatory": true,
+      "criterion": "Preserve application fields and initially unchecked explicit consent.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "qa.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "linkedin-or-pdf",
+      "mandatory": true,
+      "criterion": "Require a valid LinkedIn profile or PDF, including 2 MB and signature validation.",
+      "verificationFiles": [
+        "qa.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "retry-preserves-data",
+      "mandatory": true,
+      "criterion": "Keep input and the same submission identifier across failed or unconfirmed attempts; reset that identifier only after confirmed success.",
+      "verificationFiles": [
+        "qa.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "confirmed-success-only",
+      "mandatory": true,
+      "criterion": "Show success and reset only after HTTP success and an explicit ok:true response; clear the completed submission ID so a new application receives a new ID.",
+      "verificationFiles": [
+        "qa.test.mjs",
+        "../tests/lp-karriere-release-guard.test.mjs",
+        "browser-qa.mjs"
+      ]
+    },
+    {
+      "id": "seo-routing-security",
+      "mandatory": true,
+      "criterion": "Preserve canonicals, JobPosting, sitemap, robots, same-origin form and security headers.",
+      "verificationFiles": [
+        "quality-contract.test.mjs",
+        "qa.test.mjs",
+        "../tests/lp-karriere-release-guard.test.mjs"
+      ]
+    },
+    {
+      "id": "responsive-keyboard-access",
+      "mandatory": true,
+      "criterion": "Keep readable mobile layouts, working navigation/search and keyboard access.",
+      "verificationFiles": [
+        "browser-qa.mjs"
+      ]
+    }
+  ],
+  "integration": {
+    "integrationScope": "unchanged_relay_contract",
+    "endpoint": "/api/career-application",
+    "upstream": "https://www.lengacher-partner.ch/api/career-application",
+    "relayPath": "api/career-application.js",
+    "relaySha256": "88ef4cc241b47295433f25fa267d0ada0d4cdd31a819c6059c27249d9e2aa97d",
+    "careerBooking": "https://crm.lengacher-partner.ch/book/karriere",
+    "maxPdfBytes": 2097152,
+    "mockedSuccessProvesLiveDelivery": false,
+    "liveDelivery": {
+      "status": "UNVERIFIED",
+      "mode": "LIVE",
+      "reason": "The approved relay is unchanged. This change corrects only client submission-ID reset and adds verification controls. No new real application, CRM persistence, confirmation-email delivery or calendar booking has been verified.",
+      "evidence": [],
+      "requiredForThisScopedChange": false
+    },
+    "historicalDeliveryEvidence": []
+  },
+  "verification": {
+    "canonicalCommand": "node verify.mjs",
+    "npmScripts": {
+      "test": "node verify.mjs",
+      "build": "node verify.mjs"
+    },
+    "staticSuites": [
+      "qa.test.mjs",
+      "brand-guard.test.mjs",
+      "quality-contract.test.mjs",
+      "../tests/lp-karriere-release-guard.test.mjs"
+    ],
+    "browserEntrypoint": "browser-qa.mjs",
+    "browserRequired": true,
+    "workflow": "../.github/workflows/lp-karriere-qa.yml",
+    "requiredCheckName": "ASU / lp-karriere / quality-gate",
+    "workflowEvents": [
+      "push",
+      "pull_request"
+    ],
+    "eventPathFiltersAllowed": false,
+    "eventBranchFiltersAllowed": false,
+    "allowSkippedTests": false,
+    "allowTodoTests": false,
+    "allowStaticOnlyRelease": false,
+    "outputDirectory": "qa-output",
+    "evidenceFile": "qa-output/release-evidence.json"
+  },
+  "qaPolicy": {
+    "preReleaseRequired": [
+      "V1",
+      "V2",
+      "N1"
+    ],
+    "postReleaseAcceptanceRequired": [
+      "N2"
+    ],
+    "N2PlanRequiredBeforeRelease": true,
+    "sameTestTwiceIsIndependentReview": false
+  },
+  "evidencePolicy": {
+    "statuses": [
+      "PASS",
+      "FAIL",
+      "BLOCKED",
+      "UNVERIFIED",
+      "N/A"
+    ],
+    "modes": [
+      "LIVE",
+      "LOCAL",
+      "MOCKED",
+      "STATIC",
+      "HISTORICAL"
+    ],
+    "requireRevisionAndTarget": true,
+    "requireEvidenceForPass": true,
+    "requireReasonForNotApplicable": true,
+    "preserveFailedAttempts": true,
+    "changedCandidateInvalidatesAffectedEvidence": true,
+    "mockedOrHistoricalEvidenceProvesNewLiveEffect": false,
+    "testCountsAloneProveAcceptance": false
+  },
+  "testIntegrity": {
+    "protectedFiles": [
+      "quality-contract.json",
+      "quality-contract.test.mjs",
+      "verify.mjs",
+      "browser-qa.mjs",
+      "build.mjs",
+      "brand-guard.test.mjs",
+      "qa.test.mjs",
+      "../tests/lp-karriere-release-guard.test.mjs",
+      "../.github/workflows/lp-karriere-qa.yml",
+      "package.json",
+      "package-lock.json",
+      "vercel.json",
+      "../AGENTS.md",
+      "../docs/quality/ASU-STANDARD.md",
+      "brand/source-manifest.json",
+      "brand/header.html",
+      "brand/footer.html",
+      "brand/search.html",
+      "brand/original-assets.b64",
+      "api/career-application.js",
+      "karriere/assets/app.js"
+    ],
+    "changePolicy": "Changes to protected references, expected values, tests or release wiring require a documented authorized reason and independent review. Do not weaken a checker to approve a failed candidate.",
+    "immutableAnchorLocation": "quality-contract.test.mjs contains approved literal hashes independent of this candidate contract.",
+    "providerEnforcementStatus": "UNVERIFIED",
+    "enforcementLimit": "These repository files and their checkers are mutable. Technical merge/deployment restrictions and alternate release paths must be separately configured and verified at GitHub/Vercel; this contract alone cannot prove enforcement."
+  },
+  "clientApplication": {
+    "path": "karriere/assets/app.js",
+    "historicalBaselineCommit": "9b1e2da60ebdafdca9ddcf3a57f6ab90b1f1f858",
+    "historicalBaselineSha256": "0d3b4f9748ed59ddf455d27b7fd99fa020dea2c9cc268028c3f73ac4a50cba99",
+    "expectedCandidateSha256": "4d4afe412b5c7913afd2a2fbb88cd11de588bb97f835d7c8f981ff22c7a6ade7",
+    "authorizedChange": "Immediately after form.reset() in the confirmed-success branch, clear submissionInput.value; add one final LF. Reversing these two exact changes recovers the approved baseline bytes.",
+    "retrySubmissionIdStable": true,
+    "newSubmissionIdAfterConfirmedSuccess": true,
+    "successRequiresHttpSuccessAndOkTrue": true,
+    "verificationFiles": [
+      "quality-contract.test.mjs",
+      "browser-qa.mjs"
+    ],
+    "proofLimit": "The real-browser regression intercepts application requests with MOCKED responses; it proves client state and identifier behavior, not CRM or email delivery."
+  }
+}

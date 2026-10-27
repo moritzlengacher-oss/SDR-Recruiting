@@ -1,0 +1,267 @@
+{
+  "template_version": "1.0",
+  "template_only": true,
+  "protocol": "../ASU-STANDARD.md",
+  "configuration_state": "UNVERIFIED",
+  "configuration_reason": "Unconfigured template. Resolve every {{PLACEHOLDER}}, verify applicability and bind real references before use. No QA has been performed.",
+  "project": {
+    "name": "{{PROJECT_NAME}}",
+    "id": "{{PROJECT_OR_REPOSITORY_ID}}",
+    "work_type": "{{WEBSITE_CODE_DOCUMENT_DATA_CRM_AUTOMATION_OR_OTHER}}",
+    "task": "{{CONCRETE_REQUESTED_OUTCOME}}",
+    "request_reference": "{{USER_REQUEST_OR_PRIOR_AUTHORIZATION_REFERENCE}}",
+    "authorized_scope": "{{FILES_OBJECTS_SYSTEMS_AND_BOUNDARIES}}"
+  },
+  "target": {
+    "system": "{{TARGET_SYSTEM}}",
+    "environment": "{{TARGET_ENVIRONMENT}}",
+    "object_ids_or_paths": [
+      "{{EXACT_TARGET_ID_OR_PATH}}"
+    ],
+    "public_or_delivery_location": "{{ACTUAL_DELIVERY_LOCATION}}",
+    "baseline_revision": "{{BASELINE_COMMIT_OR_ARTIFACT_VERSION}}",
+    "candidate_revision": null,
+    "candidate_artifact_digest": null,
+    "configuration_reference": "{{RELEVANT_CONFIGURATION_VERSION_WITHOUT_SECRET_VALUES}}",
+    "deployed_or_delivered_revision": null
+  },
+  "authoritative_references": [
+    {
+      "id": "REF-001",
+      "kind": "{{BRAND_DESIGN_DOCUMENT_SCHEMA_SYSTEM_OR_OTHER_REFERENCE_TYPE}}",
+      "location": "{{AUTHORITATIVE_REFERENCE_URI_OR_PATH}}",
+      "authority_reason": "{{WHY_THIS_REFERENCE_IS_AUTHORITATIVE}}",
+      "version": "{{REFERENCE_VERSION_OR_CAPTURE_IDENTIFIER}}",
+      "captured_at": null,
+      "timezone": "{{USER_FACING_TIMEZONE}}",
+      "snapshot_location": "{{READABLE_SNAPSHOT_OR_VERSIONED_SOURCE}}",
+      "snapshot_sha256": "{{SHA256_WHERE_APPLICABLE_OTHERWISE_EXPLICIT_REASON}}"
+    }
+  ],
+  "brand": {
+    "applicability": {
+      "status": "UNVERIFIED",
+      "reason": "{{DETERMINE_WHETHER_BRAND_REQUIREMENTS_APPLY_OR_DOCUMENT_N/A}}"
+    },
+    "approved_name": "{{APPROVED_BRAND_NAME}}",
+    "reference_ids": [
+      "REF-001"
+    ],
+    "logo_asset": "{{ORIGINAL_LOGO_LOCATION_AND_VERSION}}",
+    "fonts": [
+      {
+        "family": "{{ORIGINAL_FONT_FAMILY}}",
+        "weights_and_styles": "{{REQUIRED_WEIGHTS_AND_STYLES}}",
+        "source": "{{APPROVED_FONT_SOURCE}}"
+      }
+    ],
+    "palette": [
+      {
+        "role": "{{COLOUR_ROLE}}",
+        "value": "{{APPROVED_COLOUR_VALUE}}"
+      }
+    ],
+    "approved_claim_or_wording": "{{EXACT_APPROVED_WORDING_OR_N/A_WITH_REASON}}",
+    "shared_components": [
+      {
+        "name": "{{HEADER_FOOTER_TEMPLATE_OR_OTHER_SHARED_COMPONENT}}",
+        "reference": "{{APPROVED_COMPONENT_SOURCE_AND_VERSION}}"
+      }
+    ]
+  },
+  "baseline_inventory": {
+    "functions_or_content": [
+      "{{EXISTING_FUNCTION_OR_CONTENT_TO_PRESERVE}}"
+    ],
+    "data_relationships_and_integrations": [
+      "{{EXISTING_RELATIONSHIP_OR_INTEGRATION_OR_N/A_WITH_REASON}}"
+    ],
+    "known_gaps_or_uncertainties": [
+      "{{KNOWN_GAP_OR_EXPLICIT_NONE_AFTER_BASELINE_REVIEW}}"
+    ]
+  },
+  "authorized_changes": [
+    {
+      "id": "CHG-001",
+      "description": "{{SPECIFIC_AUTHORIZED_CHANGE}}",
+      "authorization_reference": "{{CURRENT_OR_PERSISTING_AUTHORIZATION_REFERENCE}}",
+      "affected_requirement_ids": [
+        "REQ-001"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "description": "{{OBSERVABLE_REQUIRED_OUTCOME_OR_PRESERVED_PROPERTY}}",
+      "reference_ids": [
+        "REF-001"
+      ],
+      "mandatory": true,
+      "must_preserve": true,
+      "required_by": "PRE_RELEASE",
+      "acceptance_criterion": "{{PRECISE_OBSERVABLE_PASS_CRITERION}}",
+      "acceptable_evidence_modes": [
+        "{{LIVE_LOCAL_MOCKED_STATIC_OR_HISTORICAL_AS_JUSTIFIED_FOR_THIS_REQUIREMENT}}"
+      ],
+      "test_ids": [
+        "TEST-001"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "description": "{{CRITICAL_FLOW_OR_FINAL_DELIVERY_REQUIREMENT}}",
+      "reference_ids": [
+        "REF-001"
+      ],
+      "mandatory": true,
+      "must_preserve": true,
+      "required_by": "POST_RELEASE_ACCEPTANCE",
+      "acceptance_criterion": "{{EXPECTED_BEHAVIOUR_AT_THE_ACTUAL_TARGET}}",
+      "acceptable_evidence_modes": [
+        "{{EVIDENCE_MODE_REQUIRED_FOR_THE_ACTUAL_TARGET}}"
+      ],
+      "test_ids": [
+        "TEST-002"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-001",
+      "requirement_ids": [
+        "REQ-001"
+      ],
+      "method": "{{REFERENCE_COMPARISON_RENDER_CALCULATION_BEHAVIOUR_OR_DATA_CHECK}}",
+      "required_gate": "N1",
+      "expected_observation": "{{OBSERVATION_THAT_PROVES_THE_REQUIREMENT}}",
+      "result": {
+        "status": "UNVERIFIED",
+        "reason": "Not run. Template only.",
+        "evidence_mode": null,
+        "evidence_references": [],
+        "checked_revision": null,
+        "checked_target": null,
+        "observed_at": null,
+        "reviewer": null
+      }
+    },
+    {
+      "id": "TEST-002",
+      "requirement_ids": [
+        "REQ-002"
+      ],
+      "method": "{{ACTUAL_TARGET_OR_FINAL_EXPORT_VERIFICATION}}",
+      "required_gate": "N2",
+      "expected_observation": "{{OBSERVATION_AT_THE_DELIVERED_REVISION_AND_TARGET}}",
+      "external_effect_authorization_reference": "{{AUTHORIZATION_FOR_ANY_REAL_EXTERNAL_EFFECT_OR_EXPLICIT_NO_EFFECT}}",
+      "result": {
+        "status": "UNVERIFIED",
+        "reason": "Not run. Template only.",
+        "evidence_mode": null,
+        "evidence_references": [],
+        "checked_revision": null,
+        "checked_target": null,
+        "observed_at": null,
+        "reviewer": null
+      }
+    }
+  ],
+  "qa": {
+    "V1": {
+      "purpose": "Authoritative requirements, baseline, authorization and target agree.",
+      "status": "UNVERIFIED",
+      "reason": "Not run. Template only.",
+      "reviewer": null,
+      "evidence_mode": null,
+      "evidence_references": [],
+      "checked_revision": null,
+      "checked_target": null,
+      "observed_at": null
+    },
+    "V2": {
+      "purpose": "Affected functions, contents, data and dependencies are inventoried; regression risks map to acceptance checks.",
+      "status": "UNVERIFIED",
+      "reason": "Not run. Template only.",
+      "reviewer": null,
+      "independence_basis": null,
+      "evidence_mode": null,
+      "evidence_references": [],
+      "checked_revision": null,
+      "checked_target": null,
+      "observed_at": null
+    },
+    "N1": {
+      "purpose": "The finished candidate meets the agreed contract before release.",
+      "status": "UNVERIFIED",
+      "reason": "Not run. Template only.",
+      "reviewer": null,
+      "evidence_mode": null,
+      "evidence_references": [],
+      "checked_revision": null,
+      "checked_target": null,
+      "observed_at": null
+    },
+    "N2": {
+      "purpose": "The approved revision or final export is verified at the actual delivery target after release.",
+      "status": "UNVERIFIED",
+      "reason": "Not run. Template only.",
+      "reviewer": null,
+      "independence_basis": null,
+      "evidence_mode": null,
+      "evidence_references": [],
+      "checked_revision": null,
+      "checked_target": null,
+      "observed_at": null
+    }
+  },
+  "evidence_vocabulary": {
+    "result_statuses": [
+      "PASS",
+      "FAIL",
+      "BLOCKED",
+      "UNVERIFIED",
+      "N/A"
+    ],
+    "evidence_modes": [
+      "LIVE",
+      "LOCAL",
+      "MOCKED",
+      "STATIC",
+      "HISTORICAL"
+    ],
+    "rules": [
+      "N/A requires a concrete applicability reason.",
+      "PASS applies only to the observed scope, revision and target.",
+      "MOCKED or HISTORICAL evidence cannot certify a new real external effect.",
+      "Keep failed attempts and subsequent retests in the audit history.",
+      "Reference or criterion changes require a documented authorized reason; do not weaken criteria to obtain PASS."
+    ]
+  },
+  "release": {
+    "decision": "BLOCKED",
+    "reason": "Template is unconfigured; required evidence and revision/target bindings are missing.",
+    "pre_release_required_qa": [
+      "V1",
+      "V2",
+      "N1"
+    ],
+    "final_acceptance_required_qa": [
+      "V1",
+      "V2",
+      "N1",
+      "N2"
+    ],
+    "final_acceptance_status": "UNVERIFIED",
+    "technical_gate_location": "{{ACTUAL_RELEASE_GATE_OR_EXPLICIT_NOT_CONFIGURED}}",
+    "candidate_revision": null,
+    "candidate_artifact_digest": null,
+    "target_binding": null,
+    "rollback_or_recovery": "{{SAFE_AUTHORIZED_RECOVERY_PATH_OR_N/A_WITH_REASON}}",
+    "post_release_check_plan": "{{HOW_N2_IS_EXECUTED_AND_WHAT_HAPPENS_IF_IT_FAILS}}",
+    "known_limits": [
+      "This example does not install or prove a technical release restriction."
+    ]
+  },
+  "audit_history": []
+}

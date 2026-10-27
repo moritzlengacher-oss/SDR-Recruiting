@@ -40,7 +40,7 @@ for(const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_te
 const label=button.textContent;button.disabled=true;button.textContent='Wird sicher gesendet …';say('loading','Deine Bewerbung wird übermittelt …');
 try{const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),25000);let res;try{res=await fetch('/api/career-application',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ctrl.signal});}finally{clearTimeout(timeout);}
 const body=await res.json().catch(()=>({}));if(!res.ok||body.ok!==true)throw Error(body.message||'Die Bewerbung konnte nicht bestätigt werden.');
-say('success','Vielen Dank! Deine Bewerbung wurde übermittelt.'+(body.reference?' Referenz: '+body.reference:'')+' Wir melden uns persönlich.');form.reset();syncCareerOffer();
+say('success','Vielen Dank! Deine Bewerbung wurde übermittelt.'+(body.reference?' Referenz: '+body.reference:'')+' Wir melden uns persönlich.');form.reset();if(submissionInput)submissionInput.value='';syncCareerOffer();
 }catch(err){say('error',err?.message==='This operation was aborted'?'Zeitüberschreitung. Bitte nochmals versuchen.':(err?.message||'Übermittlung fehlgeschlagen. Bitte versuche es erneut.'));}
 finally{button.disabled=false;button.textContent=label;}
 });

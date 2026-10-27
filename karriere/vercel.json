@@ -54,7 +54,7 @@
       ]
     }
   ],
-  "buildCommand": "node build.mjs",
+  "buildCommand": "node verify.mjs",
   "outputDirectory": "public",
-  "installCommand": ""
+  "installCommand": "npm ci --include=dev --ignore-scripts --no-audit --no-fund"
 }

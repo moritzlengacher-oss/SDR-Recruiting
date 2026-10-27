@@ -1,9 +1,15 @@
 {
   "name": "lp-karriere",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
-    "build": "node build.mjs",
-    "test": "node build.mjs && node --test qa.test.mjs brand-guard.test.mjs"
+    "build": "node verify.mjs",
+    "test": "node verify.mjs",
+    "test:static": "node build.mjs && node --test qa.test.mjs brand-guard.test.mjs quality-contract.test.mjs ../tests/lp-karriere-release-guard.test.mjs",
+    "test:browser": "node browser-qa.mjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "playwright-core": "1.64.1"
   }
 }
