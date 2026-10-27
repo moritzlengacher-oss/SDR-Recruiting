@@ -42,6 +42,7 @@ if(resume){if(typeof resume!=='object'||!String(resume.name||'').toLowerCase().e
 let raw;try{raw=Buffer.from(resume.data,'base64');}catch{return say(res,400,{ok:false,message:'Ungültiger PDF-CV.'});}
 if(raw.length!==resume.size||raw.subarray(0,5).toString()!=='%PDF-')return say(res,400,{ok:false,message:'Ungültiger PDF-CV.'});}
 if(Buffer.byteLength(JSON.stringify(payload))>MAX_BYTES)return say(res,413,{ok:false,message:'Anfrage zu gross.'});
+if(process.env.VERCEL_ENV==='preview')return say(res,503,{ok:false,message:'QA-Vorschau: Es wurde keine echte Bewerbung gesendet. Bitte nutze die öffentliche Karriereseite.'});
 try{const ctrl=new AbortController();const timer=setTimeout(()=>ctrl.abort(),22000);let upstream;try{upstream=await fetch(UPSTREAM,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','User-Agent':'LP-Jobs-Application-Relay/1.0'},body:JSON.stringify(payload),signal:ctrl.signal});}finally{clearTimeout(timer);}
 const text=await upstream.text();let answer;try{answer=JSON.parse(text)}catch{answer={ok:false,message:'Keine gültige Bestätigung vom Bewerbungssystem.'};}
 if(upstream.ok&&answer.ok===true)return say(res,200,{ok:true,reference:typeof answer.reference==='string'?answer.reference:''});

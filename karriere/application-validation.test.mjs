@@ -24,11 +24,11 @@ const invalidProfiles=[
  'https://www.linkedin.com/company/example'
 ];
 
-function apiFixture(){
+function apiFixture(vercelEnv){
  const calls=[];
  const fakeFetch=async(url,options)=>{calls.push({url,body:JSON.parse(options.body)});return {ok:true,status:200,text:async()=>JSON.stringify({ok:true,reference:'MOCK-REFERENCE'})};};
  const module={exports:{}};
- new Function('module','fetch','Buffer','AbortController','setTimeout','clearTimeout',apiSource)(module,fakeFetch,Buffer,AbortController,setTimeout,clearTimeout);
+ new Function('module','fetch','Buffer','AbortController','setTimeout','clearTimeout','process',apiSource)(module,fakeFetch,Buffer,AbortController,setTimeout,clearTimeout,{env:{VERCEL_ENV:vercelEnv}});
  return {
   calls,
   async submit(body={},headers={}){
@@ -114,6 +114,23 @@ test('API preserves the stable submission ID and derives source_offer from the s
  assert.equal(fixture.calls[0].body.submission_id,valid.submission_id);
  assert.equal(fixture.calls[0].body.source_offer,'career-sdr');
  assert.equal(fixture.calls[0].url,'https://www.lengacher-partner.ch/api/career-application');
+});
+
+test('preview API never forwards a valid application, while production keeps the existing relay',async()=>{
+ const headers={host:'lp-karriere-qa-lengacher-partner.vercel.app',origin:'https://lp-karriere-qa-lengacher-partner.vercel.app'};
+ const preview=apiFixture('preview');
+ const blocked=await preview.submit({},headers);
+ assert.equal(blocked.statusCode,503);
+ assert.equal(blocked.body.ok,false);
+ assert.match(blocked.body.message,/QA-Vorschau.*keine echte Bewerbung/);
+ assert.equal(blocked.headers['Cache-Control'],'no-store');
+ assert.equal(preview.calls.length,0,'valid preview submissions must never reach the upstream stub');
+ assert.equal((await preview.submit({privacy_consent:false},headers)).statusCode,400,'normal validation still runs');
+ assert.equal(preview.calls.length,0);
+ const production=apiFixture('production');
+ const accepted=await production.submit();
+ assert.equal(accepted.statusCode,200);
+ assert.equal(production.calls.length,1,'the production relay contract remains active, with the network stubbed');
 });
 
 test('client refuses the same invalid profile URLs without a fetch or a form reset',async()=>{
