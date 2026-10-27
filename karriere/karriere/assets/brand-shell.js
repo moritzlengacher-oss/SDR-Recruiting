@@ -135,6 +135,8 @@ const dropdownItems = Array.from(document.querySelectorAll('.site-nav .has-dropd
     if (!navToggle || !navLinks || navToggle.dataset.lpNavBound === 'true') return;
 
     navToggle.dataset.lpNavBound = 'true';
+    navLinks.id = navLinks.id || 'site-navigation-links';
+    navToggle.setAttribute('aria-controls', navLinks.id);
     const mobileQuery = window.matchMedia('(max-width: 1100px)');
 
     function setMenuOpen(open) {
@@ -189,7 +191,7 @@ const dropdownItems = Array.from(document.querySelectorAll('.site-nav .has-dropd
     }, true);
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) { setMenuOpen(false); navToggle.focus(); }
     });
 
     const resetForViewport = () => {
@@ -222,7 +224,7 @@ const normalize=s=>String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,''
 const validHref=raw=>{try{const u=new URL(raw,location.origin);return (u.protocol==='https:'&&(u.origin===location.origin||u.origin==='https://www.lengacher-partner.ch'))||(u.origin===location.origin&&location.hostname==='localhost');}catch{return false;}};
 async function loadIndex(){
  if(searchIndex)return searchIndex;
- try{const response=await fetch('/assets/lp-brand/search-index.json',{headers:{Accept:'application/json'}});if(!response.ok)throw Error('search');const data=await response.json();if(!Array.isArray(data))throw Error('search');searchIndex=data.filter(x=>x&&typeof x.title==='string'&&validHref(x.url));}
+ try{const indexes=await Promise.all(['/assets/lp-brand/search-index.json','/karriere/assets/jobs-search.json'].map(async url=>{const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw Error('search');const data=await response.json();if(!Array.isArray(data))throw Error('search');return data;}));searchIndex=indexes.flat().filter(x=>x&&typeof x.title==='string'&&validHref(x.url));}
  catch{searchIndex=[...document.querySelectorAll('.site-nav a[href],.site-footer a[href],.job-card h3 a[href]')].map(a=>({type:'Seite',title:a.textContent.trim(),desc:'',url:a.href})).filter(x=>x.title&&validHref(x.url));}
  return searchIndex;
 }
@@ -251,7 +253,7 @@ document.addEventListener('keydown',e=>{
  if(overlay.hidden)return;
  if(e.key==='Escape'){e.preventDefault();closeSearch();return;}
  if(e.key==='ArrowDown'){e.preventDefault();focusResult(active+1);}
- if(e.key==='ArrowUp'){e.preventDefault();focusResult(active-1);}
+ if(e.key==='ArrowUp'){e.preventDefault();focusResult(active<0?-1:active-1);}
  if(e.key==='Tab'){const focusable=[...overlay.querySelectorAll('input,button,a[href]')].filter(x=>!x.hidden);const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
 });
 

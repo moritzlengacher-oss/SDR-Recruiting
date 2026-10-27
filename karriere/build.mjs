@@ -19,9 +19,11 @@ for(const [relative,encoded] of Object.entries(assets)){
 if(Object.keys(assets).length!==Object.keys(manifest.assets).length)throw Error('Missing original brand assets');
 fs.cpSync(path.join(root,'karriere'),path.join(output,'karriere'),{recursive:true});
 const header=read('brand/header.html'),footer=read('brand/footer.html'),search=read('brand/search.html');
+const careerSearch=[{type:'Karriere',title:'Karriere bei Lengacher & Partner',desc:'Alle offenen Stellen, Arbeitsalltag und Bewerbung bei L&P.',url:'/karriere',keywords:'Karriere Jobs Stellen Bewerbung Luzern Hybrid Remote'}];
 let pageCount=0;
-function render(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())render(file);else if(item.name.endsWith('.html')){let html=fs.readFileSync(file,'utf8');for(const [marker,partial]of [['<!-- LP_HEADER -->',header],['<!-- LP_SEARCH -->',search],['<!-- LP_FOOTER -->',footer]]){if(html.split(marker).length!==2)throw Error('Missing/duplicate shared brand marker '+file+' '+marker);html=html.replace(marker,partial);}fs.writeFileSync(file,html);pageCount++;}}}
+function render(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isDirectory())render(file);else if(item.name.endsWith('.html')){let html=fs.readFileSync(file,'utf8');for(const [marker,partial]of [['<!-- LP_HEADER -->',header],['<!-- LP_SEARCH -->',search],['<!-- LP_FOOTER -->',footer]]){if(html.split(marker).length!==2)throw Error('Missing/duplicate shared brand marker '+file+' '+marker);html=html.replace(marker,partial);}const schema=html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);const canonical=html.match(/<link rel="canonical" href="([^"]+)"/);if(schema&&canonical){const job=JSON.parse(schema[1]);if(job['@type']==='JobPosting')careerSearch.push({type:'Stelle',title:job.title,desc:String(job.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,260),url:new URL(canonical[1]).pathname,keywords:'Karriere Bewerbung '+job.title});}fs.writeFileSync(file,html);pageCount++;}}}
 render(path.join(output,'karriere'));
-if(pageCount!==22)throw Error('Expected overview and 21 job pages');
+if(pageCount!==22||careerSearch.length!==22)throw Error('Expected overview and 21 job pages');
+fs.writeFileSync(path.join(output,'karriere/assets/jobs-search.json'),JSON.stringify(careerSearch,null,2)+'\n');
 for(const file of ['robots.txt','sitemap.xml'])fs.copyFileSync(path.join(root,file),path.join(output,file));
 console.log('Built '+pageCount+' career pages with '+Object.keys(assets).length+' verified original L&P brand assets.');

@@ -37,12 +37,13 @@ test('all local assets and career links resolve in the built output',()=>{
 });
 test('legacy discovery and Quick Apply functions exist for every role',()=>{
  const hub=read('public/karriere/index.html');
+ const search=JSON.parse(read('public/karriere/assets/jobs-search.json'));assert.equal(search.length,22);assert.equal(new Set(search.map(x=>x.url)).size,22);assert.equal(search.filter(x=>x.type==='Stelle').length,21);
  assert.equal((hub.match(/class="job-card"/g)||[]).length,21);
  assert.equal((hub.match(/data-quick-role=/g)||[]).length,21);
  assert.equal((hub.match(/<article class="job-card"[^>]*data-location=/g)||[]).length,21);
  assert.equal((hub.match(/<article class="job-card"[^>]*data-level=/g)||[]).length,21);
  for(const id of ['job-search','job-location','job-level','job-reset','stellen','vorteile','arbeitsalltag','ablauf','faq','quick-apply','bewerben'])assert.ok(hub.includes('id="'+id+'"'),id);
- for(const file of pageFiles){const html=fs.readFileSync(file,'utf8');assert.ok(html.includes('id="quick-apply"'));assert.ok(html.includes('name="privacy_consent" required'));assert.ok(!/name="privacy_consent"[^>]*checked/.test(html));assert.ok(html.includes('action="/api/career-application"'));}
+ for(const file of pageFiles){const html=fs.readFileSync(file,'utf8');assert.ok(html.includes('id="quick-apply"'));assert.ok(html.includes('name="privacy_consent" required'));assert.ok(!/name="privacy_consent"[^>]*checked/.test(html));assert.ok(html.includes('action="/api/career-application"'));assert.ok(html.includes('https://crm.lengacher-partner.ch/book/karriere'));}
 });
 test('shared shell and application JavaScript parse; no unsafe search HTML insertion',()=>{
  const shell=read('karriere/assets/brand-shell.js'),app=read('karriere/assets/app.js');
