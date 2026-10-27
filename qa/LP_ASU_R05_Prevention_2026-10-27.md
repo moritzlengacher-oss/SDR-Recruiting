@@ -89,3 +89,7 @@ Die fertigen Ansichten wurden anhand der erzeugten Screenshots erneut angesehen.
 - [Desktop](lp-asu-r05-desktop.jpg)
 - [Mobiles Formular](lp-asu-r05-mobile-form.jpg)
 - [Footer](lp-asu-r05-footer.jpg)
+
+## Ergänzung zum verbleibenden Kontozugriff
+
+Die automatische Freigabeprüfung hat den Versuch einer sicheren GitHub-Browseranmeldung abgelehnt. Genannter Grund: Für den konkreten Anmelde-/Kontoauswahlschritt liegt noch keine ausdrückliche Freigabe vor. Es wurde keine Anmeldung durchgeführt und keine andere Route zur Umgehung verwendet. Code, Skill, Prüfnachweise und produktiver Fix sind davon unberührt. Die administrativen GitHub-/Vercel-Kontosperren bleiben offen, bis dieser gezielte Zugriff freigegeben und die Einstellungen anschliessend tatsächlich aktiviert und ausgelesen sind.
