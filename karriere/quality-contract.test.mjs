@@ -58,7 +58,7 @@ const REQUIRED_FEATURE_IDS = [
   "location-level-reset",
   "quick-apply",
   "employer-content",
-  "career-booking",
+  "career-booking-removed",
   "application-fields-consent",
   "linkedin-or-pdf",
   "retry-preserves-data",
@@ -215,7 +215,8 @@ test('Feature contract and all pages preserve the complete shared shell and appl
     assert.ok(html.includes('lang="de-CH"'), relative + ' language');
     assert.ok(html.includes(contract.brand.message), relative + ' brand wording');
     assert.ok(html.includes('id="quick-apply"'), relative + ' legacy entry');
-    assert.ok(html.includes('href="https://crm.lengacher-partner.ch/book/karriere"'), relative + ' booking');
+    assert.ok(!html.includes('https://crm.lengacher-partner.ch/book/karriere'), relative + ' calendar booking removed');
+    assert.ok(!html.includes('lp-jobs-booking-note'), relative + ' booking paragraph removed');
     for (const asset of ['/assets/lp-brand/styles.css', '/karriere/assets/styles.css', '/karriere/assets/app.js', '/karriere/assets/brand-shell.js']) assert.ok(html.includes(asset), relative + ': ' + asset);
     const form = html.match(/<form\b[^>]*id="application"[^>]*>[\s\S]*?<\/form>/)?.[0];
     assert.ok(form, relative + ' form');
@@ -256,7 +257,7 @@ test('Relay remains unchanged and mocked application responses cannot certify li
   assert.equal(contract.integration.relaySha256, APPROVED_REFERENCE_SHA256['api/career-application.js']);
   assert.equal(sha256(fs.readFileSync(path.join(appRoot, contract.integration.relayPath))), APPROVED_REFERENCE_SHA256['api/career-application.js']);
   assert.equal(contract.integration.maxPdfBytes, 2 * 1024 * 1024);
-  assert.equal(contract.integration.careerBooking, 'https://crm.lengacher-partner.ch/book/karriere');
+  assert.equal(contract.integration.careerBooking, null, 'Calendar booking was explicitly removed by the user on 2026-10-28');
   assert.equal(contract.integration.mockedSuccessProvesLiveDelivery, false);
   assert.equal(contract.integration.liveDelivery.status, 'UNVERIFIED');
   assert.equal(contract.integration.liveDelivery.mode, 'LIVE');

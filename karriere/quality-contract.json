@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "contractId": "lp-karriere-original-brand-and-function-parity",
-  "purpose": "Prevent silent replacement of approved identity, functions, integration or release target. This change adds verification controls and corrects submission-ID reset after confirmed application success; it does not redesign the site.",
+  "purpose": "Prevent silent replacement of approved identity, functions, integration or release target. The user request of 2026-10-28 removes the public career calendar-booking link and its explanatory paragraph on all 22 career pages; all other approved functions remain required.",
   "baseline": {
     "acceptedCode": "9b1e2da60ebdafdca9ddcf3a57f6ab90b1f1f858",
     "acceptedEvidence": "../qa/LP_Karriere_ASU_R04_Branding_QA_2026-10-27.md",
@@ -11,7 +11,8 @@
   "authorizedChanges": [
     "Quality instructions, acceptance contract, verification tooling, CI and evidence retention.",
     "Provider enforcement only within the verified career project and existing user authorization.",
-    "Clear the client submission identifier only after an HTTP-success response with ok:true, so the next new application gets a new ID; retain the same ID on retries. No relay, routing, recipient or delivery-contract change. The client file also gains one final LF; no other bytes differ from the approved baseline."
+    "Clear the client submission identifier only after an HTTP-success response with ok:true, so the next new application gets a new ID; retain the same ID on retries. No relay, routing, recipient or delivery-contract change. The client file also gains one final LF; no other bytes differ from the approved baseline.",
+    "User request on 2026-10-28: «Auf der L&P Karriereseite den Kalenderbuchungslink entfernen. ASU». Remove the career-booking paragraph and link on the overview and all 21 job detail pages, remove only its unused CSS, and update the corresponding contract and test expectations to require its absence. No form, relay, recipient, routing, job-catalog or shared-brand-shell change."
   ],
   "target": {
     "repository": "moritzlengacher-oss/SDR-Recruiting",
@@ -370,9 +371,9 @@
       ]
     },
     {
-      "id": "career-booking",
+      "id": "career-booking-removed",
       "mandatory": true,
-      "criterion": "Retain the verified career conversation link on all 22 pages.",
+      "criterion": "No career calendar-booking link or explanatory booking paragraph on the overview or any of the 21 job details, as explicitly requested by the user on 2026-10-28.",
       "verificationFiles": [
         "quality-contract.test.mjs",
         "browser-qa.mjs"
@@ -441,13 +442,13 @@
     "upstream": "https://www.lengacher-partner.ch/api/career-application",
     "relayPath": "api/career-application.js",
     "relaySha256": "88ef4cc241b47295433f25fa267d0ada0d4cdd31a819c6059c27249d9e2aa97d",
-    "careerBooking": "https://crm.lengacher-partner.ch/book/karriere",
+    "careerBooking": null,
     "maxPdfBytes": 2097152,
     "mockedSuccessProvesLiveDelivery": false,
     "liveDelivery": {
       "status": "UNVERIFIED",
       "mode": "LIVE",
-      "reason": "The approved relay is unchanged. This change corrects only client submission-ID reset and adds verification controls. No new real application, CRM persistence, confirmation-email delivery or calendar booking has been verified.",
+      "reason": "The approved relay and application client are unchanged. This scoped change removes the public career booking link and its explanatory paragraph on all 22 pages. No new real application, CRM persistence, confirmation-email delivery or calendar booking has been verified.",
       "evidence": [],
       "requiredForThisScopedChange": false
     },

@@ -43,7 +43,7 @@ test('legacy discovery and Quick Apply functions exist for every role',()=>{
  assert.equal((hub.match(/<article class="job-card"[^>]*data-location=/g)||[]).length,21);
  assert.equal((hub.match(/<article class="job-card"[^>]*data-level=/g)||[]).length,21);
  for(const id of ['job-search','job-location','job-level','job-reset','stellen','vorteile','arbeitsalltag','ablauf','faq','quick-apply','bewerben'])assert.ok(hub.includes('id="'+id+'"'),id);
- for(const file of pageFiles){const html=fs.readFileSync(file,'utf8');assert.ok(html.includes('id="quick-apply"'));assert.ok(html.includes('name="privacy_consent" required'));assert.ok(!/name="privacy_consent"[^>]*checked/.test(html));assert.ok(html.includes('action="/api/career-application"'));assert.ok(html.includes('https://crm.lengacher-partner.ch/book/karriere'));}
+ for(const file of pageFiles){const html=fs.readFileSync(file,'utf8');assert.ok(html.includes('id="quick-apply"'));assert.ok(html.includes('name="privacy_consent" required'));assert.ok(!/name="privacy_consent"[^>]*checked/.test(html));assert.ok(html.includes('action="/api/career-application"'));assert.ok(!html.includes('https://crm.lengacher-partner.ch/book/karriere'));assert.ok(!html.includes('lp-jobs-booking-note'));}
 });
 test('shared shell and application JavaScript parse; no unsafe search HTML insertion',()=>{
  const shell=read('karriere/assets/brand-shell.js'),app=read('karriere/assets/app.js');
