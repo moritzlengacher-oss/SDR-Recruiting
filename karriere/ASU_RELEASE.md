@@ -56,3 +56,9 @@ Für die vollständige Freigabesicherung zusätzlich aktivieren und auslesen:
 3. Änderungs- und Force-Promote-Rechte begrenzen; Änderungen an Referenzen und Sperren separat prüfen.
 
 Die vorbereitete Konfiguration und der dokumentierte Aktivierungsstand stehen unter [Provider-Sperren](../docs/quality/PROVIDER-CONTROLS.md). Eine vorbereitete JSON-Datei ist kein aktivierter Regelsatz.
+
+## R07 — Browser-Autofill, 28.10.2026
+
+Ausdrücklicher Nutzerauftrag: Autofill im gesamten Bewerbungsformular aktivieren und live gehen. Auf Übersicht und allen 21 Stellen-Detailseiten wird das Formular explizit mit autocomplete="on" gekennzeichnet. Bereits vorhandene Tokens für Name, E-Mail, Telefon bleiben erhalten; Wohnort erhält das standardisierte Token address-level2. Rolle, Pensum, Starttermin, LinkedIn und Nachricht erhalten autocomplete="on" als Vervollständigungs-/Verlaufshinweis. Ob ein Browser für freie Angaben Vorschläge anbietet, hängt vom dortigen Profil und Browser ab. CV-Dateiupload und Datenschutz-Einwilligung bleiben bewusst manuell; Honeypot bleibt autocomplete="off". Keine automatische Datenübermittlung, keine Änderungen an API, Client-JavaScript, Relay, Jobs, Originalmarke oder entferntem Kalenderbuchungslink.
+
+V1: 22 Formulare aus main / 81ec7fc gelesen. V2: sieben attributbezogene Änderungen je Seite, Erhalt der Formdatenwege und Rollback auf 81ec7fc. N1: eigenständiger statischer Test aller 22 Formulare und zwei Browserchecks zusätzlich zu den bestehenden Gates. N2: Nach Livegang tatsächlichen Commit, Vercel-Deployment, öffentliche Domain und gerenderte Formularfelder prüfen. Produktives CRM-/E-Mail-Senden sowie das Verhalten eines gespeicherten persönlichen Browserprofils werden durch diese Prüfungen nicht nachgewiesen.

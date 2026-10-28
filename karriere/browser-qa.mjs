@@ -352,6 +352,19 @@ async function runSuite(catalog) {
   const visibleTitles = async () => (await page.locator('.job-card:visible h3').allTextContents()).map(s => s.trim()).sort();
   const expectedTitles = filtered => filtered.map(item => item.title).sort();
 
+  await check('Browser form exposes complete autofill metadata', async () => {
+    assert.equal(await page.locator('#application').getAttribute('autocomplete'),'on');
+    const expected={name:'name',email:'email',phone:'tel',residence:'address-level2',career_role:'on',workload:'on',earliest_start:'on',linkedin:'on',message:'on'};
+    for(const [name,token] of Object.entries(expected))assert.equal(await page.locator('[name="'+name+'"]').getAttribute('autocomplete'),token,name);
+  });
+  await check('Autofill preserves manual privacy consent and file upload', async () => {
+    assert.equal(await page.locator('[name=website]').getAttribute('autocomplete'),'off');
+    assert.equal(await page.locator('[name=privacy_consent]').isChecked(),false);
+    assert.equal(await page.locator('[name=privacy_consent]').getAttribute('autocomplete'),null);
+    assert.equal(await page.locator('[name=resumePdfFile]').getAttribute('autocomplete'),null);
+    assert.equal(await page.locator('[name=resumePdfFile]').getAttribute('type'),'file');
+  });
+
   await check('Catalog, role options and generated search preserve every job', async () => {
     assert.equal(cards.length, catalog.length);
     assert.deepEqual(cards.map(item => item.href).sort(), catalog.map(item => item.pathname).sort());
