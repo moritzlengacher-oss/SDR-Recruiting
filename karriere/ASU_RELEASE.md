@@ -1,6 +1,6 @@
 # L&P Karriere — aktueller ASU-Freigabevertrag
 
-Stand: 27.10.2026. Massgeblich sind `quality-contract.json`, der universelle [ASU-Standard](../docs/quality/ASU-STANDARD.md) und die tatsächlichen Einstellungen der Provider. Der frühere Text „Feature-Branch, kein Livegang“ und die Zuordnung zum Projekt `sdr-recruiting` waren veraltet; sie gelten nicht.
+Stand: 28.10.2026. Massgeblich sind `quality-contract.json`, der universelle [ASU-Standard](../docs/quality/ASU-STANDARD.md) und die tatsächlichen Einstellungen der Provider. Der frühere Text „Feature-Branch, kein Livegang“ und die Zuordnung zum Projekt `sdr-recruiting` waren veraltet; sie gelten nicht.
 
 ## Identität und Referenz
 
@@ -39,7 +39,9 @@ Jeder Nachweis enthält Revision, Ziel, Quelle, Zeitpunkt, tatsächlichen Prüfe
 
 Die Erstumstellung verlangte eine echte kontrollierte Bewerbung mit CRM-/E-Mail-Quittung. PR1 behauptet diese Durchführung; diese historische Aussage ist ohne erneute Einsicht in die konkreten Quittungen kein frischer Nachweis. R04 hat den unveränderten Relay isoliert geprüft und echte Sendungen nicht wiederholt. Diese Einschränkung bleibt sichtbar.
 
-Der aktuelle Auftrag fügt Qualitätsregeln hinzu und korrigiert einen dabei nachgewiesenen Clientfehler: Nach bestätigtem Erfolg wird die Übermittlungs-ID geleert, damit eine neue Bewerbung eine neue ID erhält; Wiederholungen nach Fehlern behalten ihre ID. Relay, Ziel, Validierung und Empfänger bleiben unverändert. Der Vertrag dokumentiert Ausgangsstand und diese begrenzte Korrektur. Browser-POSTs werden vor jeder Navigation abgefangen; `MOCKED` bestätigt ausschließlich Clientverhalten und Fehlerbehandlung. Live-Zustellung von Bewerbung, E-Mail und Kalender bleibt in diesem Auftrag **UNVERIFIED**.
+Der aktuelle Nutzerauftrag vom 28.10.2026 lautet: «Auf der L&P Karriereseite den Kalenderbuchungslink entfernen. ASU». Er entfernt den Absatz «Du möchtest uns zuerst kennenlernen? Karrieregespräch buchen →» samt Link auf der Übersicht und allen 21 Stellendetailseiten sowie ausschliesslich die dazugehörigen ungenutzten CSS-Regeln. Die bisherige Pflicht, diesen Link zu erhalten, wird aufgrund dieses ausdrücklichen Auftrags durch die Pflicht zu seiner Abwesenheit ersetzt und unabhängig geprüft. Der Änderungsvertrag und die Prüfnachweise stehen in [R06](../qa/LP_Karriere_ASU_R06_Kalenderlink_2026-10-28.md).
+
+Bewerbungsformular, Clientverhalten, Relay, Ziel, Validierung, Empfänger, Stellen und gemeinsame Markenkomponenten bleiben unverändert. Die zuvor bestätigte Korrektur der Übermittlungs-ID bleibt erhalten: Nach bestätigtem Erfolg wird sie geleert; Wiederholungen nach Fehlern behalten ihre ID. Browser-POSTs werden vor jeder Navigation abgefangen; `MOCKED` bestätigt ausschliesslich Clientverhalten und Fehlerbehandlung. Live-Zustellung von Bewerbung und E-Mail bleibt in diesem Auftrag **UNVERIFIED**; eine echte Terminbuchung ist für die Entfernung des Links nicht erforderlich.
 
 Bei einer Änderung an API, Routing, Validierung, Datenspeicher, Empfänger oder Zustellung reichen diese Nachweise nicht. Der bestehende Integrationshash blockiert unbemerkte Änderungen. Eine bewusste Änderung erfordert einen angepassten Vertrag, unabhängige Prüfung und passende echte Integrationsbelege. Ohne ausdrückliche Versandautorisierung den Versandteil BLOCKED nennen; übrige sichere Arbeiten fortsetzen.
 

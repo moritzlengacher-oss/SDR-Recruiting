@@ -496,12 +496,13 @@ async function runSuite(catalog) {
     assert.equal(await page.evaluate(() => document.activeElement.classList.contains('nav-search-btn')), true);
   });
 
-  await check('FAQ and verified career conversation link', async () => {
+  await check('FAQ works and the removed calendar-booking link is absent', async () => {
     const details = page.locator('.lp-jobs-faq details').first();
     await click(details.locator('summary'));
     assert.equal(await details.getAttribute('open'), '');
     await click(details.locator('summary'));
-    assert.equal(await page.locator('.lp-jobs-booking-note a').getAttribute('href'), 'https://crm.lengacher-partner.ch/book/karriere');
+    assert.equal(await page.locator('a[href="https://crm.lengacher-partner.ch/book/karriere"]').count(), 0);
+    assert.equal(await page.locator('.lp-jobs-booking-note').count(), 0);
   });
 
   for (const width of [1440, 390, 320]) {
@@ -648,7 +649,8 @@ async function runSuite(catalog) {
       assert.equal(await page.locator('footer').count(), 1);
       assert.equal(await page.locator('#quick-apply').count(), 1);
       assert.equal(await page.locator('[name=privacy_consent]').isChecked(), false);
-      assert.equal(await page.locator('.lp-jobs-booking-note a').getAttribute('href'), 'https://crm.lengacher-partner.ch/book/karriere');
+      assert.equal(await page.locator('a[href="https://crm.lengacher-partner.ch/book/karriere"]').count(), 0);
+      assert.equal(await page.locator('.lp-jobs-booking-note').count(), 0);
       await page.setViewportSize({ width: 320, height: 844 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       checkedDetails.push(job.pathname);
