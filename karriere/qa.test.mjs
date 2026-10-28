@@ -16,6 +16,24 @@ test("exactly 21 unique career detail pages", () => {
   assert.equal(jobFolders.length,21);
   assert.equal(new Set(jobFolders).size,21);
 });
+test("all 22 application forms expose safe browser autofill metadata", () => {
+ const pages=["karriere/index.html",...jobFolders.map(slug=>"karriere/"+slug+"/index.html")];
+ assert.equal(pages.length,22);
+ const expected={name:"name",email:"email",phone:"tel",residence:"address-level2",career_role:"on",workload:"on",earliest_start:"on",linkedin:"on",message:"on"};
+ for(const file of pages){
+  const form=read(file).match(/<form\b[^>]*id="application"[^>]*>[\s\S]*?<\/form>/)?.[0];
+  assert.ok(form,file+" form missing");
+  assert.match(form,/^<form[^>]*autocomplete="on"/,file);
+  const controls=[...form.matchAll(/<(?:input|select|textarea)\b[^>]*>/g)].map(m=>m[0]);
+  for(const [name,token] of Object.entries(expected)){const matches=controls.filter(t=>t.includes('name="'+name+'"'));assert.equal(matches.length,1,file+" "+name);assert.ok(matches[0].includes('autocomplete="'+token+'"'),file+" "+name);}
+  const website=controls.find(t=>t.includes('name="website"')),privacy=controls.find(t=>t.includes('name="privacy_consent"')),resume=controls.find(t=>t.includes('name="resumePdfFile"'));
+  assert.ok(website?.includes('autocomplete="off"'),file+" honeypot");
+  assert.ok(privacy?.includes('required')&&!/\bchecked\b/.test(privacy)&&!privacy.includes('autocomplete='),file+" manual consent");
+  assert.ok(resume?.includes('type="file"')&&!resume.includes("autocomplete="),file+" manual CV");
+  assert.ok(!form.includes("crm.lengacher-partner.ch/book/karriere"),file+" removed booking link");
+ }
+});
+
 test("overview has 21 links/cards and same-origin form", () => {
   assert.equal((listing.match(/class="job-card"/g)||[]).length,21);
   for (const s of jobFolders) assert.ok(listing.includes('href="/karriere/'+s+'"'),s);
